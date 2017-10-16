@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
 import os 
 import datetime
 import glob
@@ -67,7 +68,14 @@ def findproperties(filename):
 filelist=glob.glob('../Data/2015/Patricia/*.avp')
 filelist=np.sort(filelist)
 plt.figure(figsize=(13,9))
+map=Basemap(projection='ortho',lat_0=18,lon_0=-100,resolution='l')
+map.drawcoastlines(linewidth=0.25)
+map.drawcountries(linewidth=0.25)
+map.fillcontinents(color='coral',lake_color='aqua')
+map.drawparallels(np.arange(-100,-90,4))
+
 dd=22
+
 for filename in filelist:
 	nump=np.genfromtxt(filename,skip_header=6,skip_footer=19)
 	print(filename)
@@ -101,8 +109,8 @@ for filename in filelist:
 	u=clean2(cleanu(clean1(u)))
 	w=clean2(clean1(w))
 	rh=clean2(clean1(RH))
-	plt.scatter(lon[0],lat[0],s=10,marker='v')
-	plt.plot(lon,lat,label=dicc['Launch Time'].time())
+#	plt.scatter(lon[0],lat[0],s=10,marker='v')
+	map(lon,lati)#,label=dicc['Launch Time'].time())
 #	f, (ax1,ax2,ax3)=plt.subplots(1,3,sharey=True,figsize=(16,9))
 #	f.suptitle('Dropsonde Katrina 2005/08/22, 19:56:16',fontsize=18)
 #	ax1.plot(T,H,'r--')
