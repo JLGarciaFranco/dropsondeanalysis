@@ -1,0 +1,1000 @@
+ 1043  rm *.tar.gz 
+ 1044  ls
+ 1045  vim g144535149.avp 
+ 1046  cd ../../
+ 1047  cd ../scripts/
+ 1048  ls
+ 1049  vim soundings101.py 
+ 1050  vim soundings102.py 
+ 1051  python3 soundings102.py 
+ 1052  vim ../Data/2015/Patricia/g144325102.avp 
+ 1053  vim soundings102.py 
+ 1054  python3 soundings102.py 
+ 1055  vim soundings102.py 
+ 1056  python3 soundings102.py 
+ 1057  vim soundings102.py 
+ 1058  python3 soundings102.py 
+ 1059  vim soundings102.py 
+ 1060  python3 soundings102.py 
+ 1061  vim soundings102.py 
+ 1062  python3 soundings102.py 
+ 1063  vim soundings102.py 
+ 1064  python3 soundings102.py 
+ 1065  vim soundings102.py 
+ 1066  python3 soundings102.py 
+ 1067  vim soundings102.py 
+ 1068  python3 soundings102.py 
+ 1069  cd ../Data/
+ 1070  ls
+ 1071  cd 2015/Patricia/
+ 1072  ls
+ 1073  vim g134155049.avp 
+ 1074  vim g132855142.avp 
+ 1075  exit
+ 1076  cd ../../../scripts/
+ 1077  ls
+ 1078  vim soundings102.py 
+ 1079  python3 soundings102.py 
+ 1080  vim soundings102.py 
+ 1081  python3 soundings102.py 
+ 1082  vim soundings102.py 
+ 1083  python3 soundings102.py 
+ 1084  vim soundings102.py 
+ 1085  python3 soundings102.py 
+ 1086  vim soundings102.py 
+ 1087  python3 soundings102.py 
+ 1088  vim soundings102.py 
+ 1089  python3 soundings102.py 
+ 1090  vim soundings102.py 
+ 1091  python3 soundings102.py 
+ 1092  vim soundings102.py 
+ 1093  python3 soundings102.py 
+ 1094  vim soundings102.py 
+ 1095  python3 soundings102.py 
+ 1096  vim soundings102.py 
+ 1097  python3 soundings102.py 
+ 1098  vim soundings102.py 
+ 1099  python3 soundings102.py 
+ 1100  vim soundings102.py 
+ 1101  python3 soundings102.py 
+ 1102  vim soundings102.py 
+ 1103  python3 soundings102.py 
+ 1104  vim soundings102.py 
+ 1105  python3 soundings102.py 
+ 1106  vim soundings102.py 
+ 1107  python3 soundings102.py 
+ 1108  vim soundings102.py 
+ 1109  python3 soundings102.py 
+ 1110  cd 
+ 1111  cd Documents/Latex/
+ 1112  ls
+ 1113  cd papersummaries/
+ 1114  ls
+ 1115  cp smith_hurrbltheory.tex zhang_dropsonde_2013.tex 
+ 1116  vim zhang_dropsonde_2013.tex 
+ 1117  gedit zhang_dropsonde_2013.tex & 
+ 1118  vim zhang_dropsonde_2013.tex 
+ 1119  cd Downloads/
+ 1120  unzip conacyt/701275_compressed_ilovepdf_split_all.zip 
+ 1121  cd conacyt/
+ 1122  ls
+ 1123  ls -lt
+ 1124  unzip 701275_compressed_ilovepdf_split_all.zip 
+ 1125  ls
+ 1126  history
+ 1127  locate hist*.txt
+ 1128  ls -lt
+ 1129  cd Documents/
+ 1130  ls
+ 1131  cd MRes/
+ 1132  ls
+ 1133  cd ../
+ 1134  ls
+ 1135  cd Python/
+ 1136  ls
+ 1137  cd ..
+ 1138  history > hist.txt
+ 1139  vim hist.txt 
+ 1140  scp earwrf04@arc2.leeds.ac.uk:/home/ufaserv1_i/earwrf04/nobackup/jlgf/Katrinad
+ 1141  cd MRes/
+ 1142  mkdir Katrina
+ 1143  cd Katrina/
+ 1144  scp earwrf04@arc2.leeds.ac.uk:/home/ufaserv1_i/earwrf04/nobackup/jlgf/Katrina/* . 
+ 1145  history
+ 1146  ssh -X earwrf04@arc2.leeds.ac.uk 
+ 1147  cd Documents/MRes/Project/scripts/
+ 1148  ls
+ 1149  python3 soundings102.py 
+ 1150  vim soundings102.py 
+ 1151  python3 soundings102.py 
+ 1152  vim soundings102.py 
+ 1153  python3 soundings102.py 
+ 1154  vim soundings102.py 
+ 1155  python3 soundings102.py 
+ 1156  vim soundings102.py 
+ 1157  python3 soundings102.py 
+ 1158  vim soundings102.py 
+ 1159  python3 soundings102.py 
+ 1160  vim soundings102.py 
+ 1161  python3 soundings102.py 
+ 1162  vim soundings102.py 
+ 1163  python3 soundings102.py 
+ 1164  vim soundings102.py 
+ 1165  python3 soundings102.py 
+ 1166  vim soundings102.py 
+ 1167  python3 soundings102.py 
+ 1168  vim soundings102.py 
+ 1169  python3 soundings102.py 
+ 1170  vim soundings102.py 
+ 1171  python3 soundings102.py 
+ 1172  vim soundings102.py 
+ 1173  python3 soundings102.py 
+ 1174  vim soundings102.py 
+ 1175  python3 soundings102.py 
+ 1176  vim soundings102.py 
+ 1177  python3 soundings102.py 
+ 1178  vim soundings102.py 
+ 1179  python3 soundings102.py 
+ 1180  vim soundings102.py 
+ 1181  python3 soundings102.py 
+ 1182  vim soundings102.py 
+ 1183  python3 soundings102.py 
+ 1184  vim soundings102.py 
+ 1185  python3 soundings102.py 
+ 1186  vim soundings102.py 
+ 1187  python3 soundings102.py 
+ 1188  vim soundings102.py 
+ 1189  python3 soundings102.py 
+ 1190  vim soundings102.py 
+ 1191  python3 soundings102.py 
+ 1192  vim soundings102.py 
+ 1193  python3 soundings102.py 
+ 1194  vim soundings102.py 
+ 1195  python3 soundings102.py 
+ 1196  vim soundings102.py 
+ 1197  cd Documents/MRes/
+ 1198  cd Project/scripts/
+ 1199  ls
+ 1200  vim soundings102.py 
+ 1201  python soundings102.py 
+ 1202  vim soundings102.py 
+ 1203  python soundings102.py 
+ 1204  vim soundings102.py 
+ 1205  python3 soundings102.py 
+ 1206  vim soundings102.py 
+ 1207  python3 soundings102.py 
+ 1208  vim ../Data/2015/Patricia/g132855315.avp 
+ 1209  vim soundings102.py 
+ 1210  python3 soundings102.py 
+ 1211  vim soundings102.py 
+ 1212  python3 soundings102.py 
+ 1213  vim soundings102.py 
+ 1214  python3 soundings102.py 
+ 1215  vim soundings102.py 
+ 1216  python3 soundings102.py 
+ 1217  vim soundings102.py 
+ 1218  python3 soundings102.py 
+ 1219  vim soundings102.py 
+ 1220  python3 soundings102.py 
+ 1221  vim soundings102.py 
+ 1222  python3 soundings102.py 
+ 1223  vim soundings102.py 
+ 1224  python3 soundings102.py 
+ 1225  vim soundings102.py 
+ 1226  python3 soundings102.py 
+ 1227  vim soundings102.py 
+ 1228  python3 soundings102.py 
+ 1229  vim soundings102.py 
+ 1230  python3 soundings102.py 
+ 1231  vim soundings102.py 
+ 1232  python3 soundings102.py 
+ 1233  vim soundings102.py 
+ 1234  python3 soundings102.py 
+ 1235  vim soundings102.py 
+ 1236  python3 soundings102.py 
+ 1237  vim soundings102.py 
+ 1238  python3 soundings102.py 
+ 1239  vim soundings102.py 
+ 1240  python3 soundings102.py 
+ 1241  vim soundings102.py 
+ 1242  python3 soundings102.py 
+ 1243  vim soundings102.py 
+ 1244  python3 soundings102.py 
+ 1245  vim soundings102.py 
+ 1246  python3 soundings102.py 
+ 1247  vim soundings102.py 
+ 1248  python3 soundings102.py 
+ 1249  vim soundings102.py 
+ 1250  python3 soundings102.py 
+ 1251  vim soundings102.py 
+ 1252  python3 soundings102.py 
+ 1253  vim soundings102.py 
+ 1254  python3 soundings102.py 
+ 1255  cd ../Data/
+ 1256  ls
+ 1257  cd 2001/
+ 1258  ls
+ 1259  cd Humberto/
+ 1260  ls
+ 1261  cd gps.qc.eol/
+ 1262  ls
+ 1263  cd GIV/
+ 1264  ls
+ 1265  vim D20010924_022714.003115312_PQC.eol.radazm.Wwind 
+ 1266  cd ../
+ 1267  ls
+ 1268  cd P-3.42/
+ 1269  ls
+ 1270  vim D20010924_222443.003515041_PQC.eol.radazm.Wwind 
+ 1271  cd Documents/Latex/papersummaries/
+ 1272  ls
+ 1273  vim zhang_dropsonde_2013.tex 
+ 1274  pdflatex zhang_dropsonde_2013.tex 
+ 1275  evince zhang_dropsonde_2013.pdf 
+ 1276  pdflatex zhang_dropsonde_2013.tex 
+ 1277  vim zhang_dropsonde_2013.tex 
+ 1278  pdflatex zhang_dropsonde_2013.tex 
+ 1279  evince zhang_dropsonde_2013.pdf &
+ 1280  vim zhang_dropsonde_2013.tex 
+ 1281  pdflatex zhang_dropsonde_2013.tex 
+ 1282  evince zhang_dropsonde_2013.pdf &
+ 1283  vim zhang_dropsonde_2013.tex 
+ 1284  pdflatex zhang_dropsonde_2013.tex 
+ 1285  evince zhang_dropsonde_2013.pdf &
+ 1286  cd Downloads/
+ 1287  cd papers/
+ 1288  ls
+ 1289  unzip papers.zip 
+ 1290  ls
+ 1291  acroread Emanuel_Physics_Today_2006.pdf &
+ 1292  ls
+ 1293  ls -lt
+ 1294  acroread 401665a0.pdf 
+ 1295  cd Downloads/
+ 1296  ls
+ 1297  ls *.sh
+ 1298  ls *run
+ 1299  bash SecureW2_JoinNow.run 
+ 1300  cd Downloads/
+ 1301  bash SecureW2_JoinNow.run 
+ 1302  scp earwrf04@arc2.leeds.ac.uk:/home/ufaserv1_i/earwrf04/nobackup/jlgf/Katrina/*.txt 
+ 1303  scp earwrf04@arc2.leeds.ac.uk:/home/ufaserv1_i/earwrf04/nobackup/jlgf/Katrina/*.txt ../Documents/MRes/
+ 1304  cd ../Documents/MRes/
+ 1305  ls
+ 1306  vim 1.txt 
+ 1307  vim 2.txt 
+ 1308  mv 1.txt 2.txt nclexercises/
+ 1309  cd nclexercises/
+ 1310  ls
+ 1311  vim plot1.py
+ 1312  python3 plot1.py 
+ 1313  vim plot1.py
+ 1314  python3 plot1.py 
+ 1315  vim plot1.py
+ 1316  python3 plot1.py 
+ 1317  vim 1.txt 
+ 1318  vim 2.txt 
+ 1319  vim plot1.py
+ 1320  python3 plot1.py 
+ 1321  vim plot1.py
+ 1322  python3 plot1.py 
+ 1323  vim plot1.py
+ 1324  python3 plot1.py 
+ 1325  vim plot1.py
+ 1326  python3 plot1.py 
+ 1327  vim plot1.py
+ 1328  python3 plot1.py 
+ 1329  ssh earwrf04@arc2.leeds.ac.uk -X 
+ 1330  cd
+ 1331  cd Downloads/
+ 1332  bash SecureW2_JoinNow.run 
+ 1333  scp earwrf04@arc2.leeds.ac.uk:/home/ufaserv1_i/earwrf04/nobackup/jlgf/Katrina/u.txt ../Documents/MRes/nclexercises/. 
+ 1334  cd ../Documents/MRes/nclexercises/
+ 1335  ls
+ 1336  vim plot1.py 
+ 1337  vim q2.py 
+ 1338  vim 2.txt 
+ 1339  vim q2.py 
+ 1340  python3 q2.py 
+ 1341  cd ../../Latex/seminars/
+ 1342  ls
+ 1343  aspell -t -c file.tex
+ 1344  aspell -t -c Alex_water_1.tex 
+ 1345  cd Documents/MRes/
+ 1346  ls
+ 1347  cd nclexercises/
+ 1348  ls
+ 1349  vim plot1.py 
+ 1350  vim plot2.py 
+ 1351  vim q2.py 
+ 1352  python3 q2.py 
+ 1353  python3 plot1.py 
+ 1354  evince ej1.png ej2.png &
+ 1355  ls
+ 1356  eog ej1.png ej2.png &
+ 1357  eog ej2.png 
+ 1358  cd ../
+ 1359  ls
+ 1360  cd ../
+ 1361  ls
+ 1362  cd Latex/
+ 1363  ls
+ 1364  cd seminars/
+ 1365  ls
+ 1366  cp paper.tex 2.tex 
+ 1367  vim 2.tex 
+ 1368  cd 
+ 1369  cd Documents/MRes/Project/
+ 1370  ls
+ 1371  cd Data/
+ 1372  ls
+ 1373  cd 20
+ 1374  ls
+ 1375  cd 2015/
+ 1376  cd Patricia/
+ 1377  ls
+ 1378  vim g110355332.avp 
+ 1379  cd Documents/MRes/Project/
+ 1380  ls
+ 1381  cd scripts/
+ 1382  vim soundings102.py 
+ 1383  python3 soundings102.py 
+ 1384  vim soundings102.py 
+ 1385  python3 soundings102.py 
+ 1386  vim soundings102.py 
+ 1387  python3 soundings102.py 
+ 1388  vim soundings102.py 
+ 1389  python3 soundings102.py 
+ 1390  vim soundings102.py 
+ 1391  python3 soundings102.py 
+ 1392  vim soundings102.py 
+ 1393  python3 soundings102.py 
+ 1394  vim soundings102.py 
+ 1395  python3 soundings102.py 
+ 1396  vim soundings102.py 
+ 1397  git init
+ 1398  git add .
+ 1399  git commit 
+ 1400  git config --global user.name 'Jorge'
+ 1401  git commit 
+ 1402  git config --global user.email 'ee17jlgf@leeds.ac.uk' 
+ 1403  ls
+ 1404  git commit
+ 1405  vim soundings103.py 
+ 1406  python3 soundings103.py 
+ 1407  vim soundings103.py 
+ 1408  python3 soundings103.py 
+ 1409  vim soundings103.py 
+ 1410  python3 soundings103.py 
+ 1411  vim soundings103.py 
+ 1412  python3 soundings103.py 
+ 1413  vim soundings103.py 
+ 1414  python3 soundings103.py 
+ 1415  vim soundings103.py 
+ 1416  python3 soundings103.py 
+ 1417  vim soundings103.py 
+ 1418  python3 soundings103.py 
+ 1419  vim soundings103.py 
+ 1420  python3 soundings103.py 
+ 1421  vim soundings103.py 
+ 1422  python3 soundings103.py 
+ 1423  vim soundings103.py 
+ 1424  python3 soundings103.py 
+ 1425  vim soundings103.py 
+ 1426  python3 soundings103.py 
+ 1427  vim soundings103.py 
+ 1428  python3 soundings103.py 
+ 1429  vim soundings103.py 
+ 1430  python3 soundings103.py 
+ 1431  vim soundings103.py 
+ 1432  python3 soundings103.py 
+ 1433  vim soundings103.py 
+ 1434  python3 soundings103.py 
+ 1435  vim soundings103.py 
+ 1436  python3 soundings103.py 
+ 1437  vim soundings103.py 
+ 1438  python3 soundings103.py 
+ 1439  vim soundings103.py 
+ 1440  python3 soundings103.py 
+ 1441  vim soundings103.py 
+ 1442  python3 soundings103.py 
+ 1443  vim soundings103.py 
+ 1444  python3 soundings103.py 
+ 1445  vim soundings103.py 
+ 1446  python3 soundings103.py 
+ 1447  vim soundings103.py 
+ 1448  python3 soundings103.py 
+ 1449  vim soundings103.py 
+ 1450  python3 soundings103.py 
+ 1451  vim soundings103.py 
+ 1452  python3 soundings103.py 
+ 1453  vim soundings103.py 
+ 1454  python3 soundings103.py 
+ 1455  vim soundings103.py 
+ 1456  python3 soundings103.py 
+ 1457  vim soundings103.py 
+ 1458  python3 soundings103.py 
+ 1459  vim soundings103.py 
+ 1460  python3 soundings103.py 
+ 1461  vim soundings103.py 
+ 1462  python3 soundings103.py 
+ 1463  vim soundings103.py 
+ 1464  python3 soundings103.py 
+ 1465  vim soundings103.py 
+ 1466  python3 soundings103.py 
+ 1467  vim soundings103.py 
+ 1468  python3 soundings103.py 
+ 1469  vim soundings103.py 
+ 1470  python3 soundings103.py 
+ 1471  vim soundings103.py 
+ 1472  python3 soundings103.py 
+ 1473  vim soundings103.py 
+ 1474  python3 soundings103.py 
+ 1475  vim soundings103.py 
+ 1476  python3 soundings103.py 
+ 1477  vim soundings103.py 
+ 1478  python3 soundings103.py 
+ 1479  vim soundings103.py 
+ 1480  python3 soundings103.py 
+ 1481  vim soundings103.py 
+ 1482  python3 soundings103.py 
+ 1483  cd ../Data/2015/Patricia/
+ 1484  ks
+ 1485  ls
+ 1486  vim g143425108.avp 
+ 1487  vim g110355332.avp 
+ 1488  vim g110745327.avp 
+ 1489  history
+ 1490  /ssh
+ 1491  ssh -X earwrf04@arc2.leeds.ac.uk
+ 1492  ssh earwrf04@arc2.leeds.ac.uk -X 
+ 1493  cd Downloads/
+ 1494  bash SecureW2_JoinNow.run 
+ 1495  cd 
+ 1496  cd Documents/
+ 1497  vim todolist.txt
+ 1498  cd Latex/
+ 1499  ls
+ 1500  cd seminars/
+ 1501  ls
+ 1502  pdflatex 2.tex 
+ 1503  vim 2.tex
+ 1504  pdflatex 2.tex 
+ 1505  evince 2.pdf 
+ 1506  cp 2.tex 3.tex 
+ 1507  vim 3.tex 
+ 1508  pdflatex 3.tex 
+ 1509  vim 3.tex 
+ 1510  pdflatex 3.tex 
+ 1511  vim 3.tex 
+ 1512  pdflatex 3.tex 
+ 1513  evince 3.pdf 
+ 1514  vim 3.tex 
+ 1515  cd Documents/Latex/seminars/
+ 1516  ls
+ 1517  vim 2.tex 
+ 1518  pdflatex 2.tex 
+ 1519  evince 2.pdf &
+ 1520  vim 2.tex 
+ 1521  pdflatex 2.tex 
+ 1522  evince 2.pdf &
+ 1523  vim 2.tex 
+ 1524  pdflatex 2.tex 
+ 1525  vim 2.tex 
+ 1526  pdflatex 2.tex 
+ 1527  vim 2.tex 
+ 1528  pdflatex 2.tex 
+ 1529  vim 2.tex 
+ 1530  pdflatex 2.tex 
+ 1531  cd ../papersummaries/
+ 1532  ls
+ 1533  vim zhang_dropsonde_2013.tex 
+ 1534  ls -lt
+ 1535  vim wishe1.tex 
+ 1536  pdflatex wishe1.tex 
+ 1537  evince wishe1.pdf & 
+ 1538  vim wishe1.tex 
+ 1539  cd ../
+ 1540  cd MRes/
+ 1541  ls
+ 1542  cd Katrina/
+ 1543  ls
+ 1544  evince 2007paper1.pdf &
+ 1545  mv 2007paper1.pdf bosart_katrina_2007_1.pdf 
+ 1546  ls
+ 1547  evince 2007paper2.pdf 
+ 1548  mv 2007paper2.pdf bosart_katrina_2007_2.pdf 
+ 1549  cd ../
+ 1550  ls
+ 1551  cd Project/
+ 1552  ls
+ 1553  cd docs/
+ 1554  ls
+ 1555  evince EP202015_Patricia.pdf &
+ 1556  mv EP202015_Patricia.pdf report_Patricia_2015.pdf 
+ 1557  ls
+ 1558  evince Foltz_et_al-2016-Geophysical_Research_Letters.pdf 
+ 1559  mv Foltz_et_al-2016-Geophysical_Research_Letters.pdf foltz_enso_2016.pdf 
+ 1560  ls 
+ 1561  evince Huang_et_al-2017-Journal_of_Geophysical_Research-_Oceans.pdf 
+ 1562  mv Huang_et_al-2017-Journal_of_Geophysical_Research-_Oceans.pdf huan_fluxesenso_2015.pdf
+ 1563  cd
+ 1564  cd Downloads/
+ 1565  ls
+ 1566  cd papers/
+ 1567  ls
+ 1568  ls -lt
+ 1569  evince Montgomery_et_al-2015-Journal_of_Advances_in_Modeling_Earth_Systems.pdf 
+ 1570  mv Montgomery_et_al-2015-Journal_of_Advances_in_Modeling_Earth_Systems.pdf montgomery_wishe_2014.pdf 
+ 1571  evince montsmith_Hintensi.pdf 
+ 1572  mv montsmith_Hintensi.pdf montsmith_TCintens_2013.pdf 
+ 1573  ls
+ 1574  ls -lt
+ 1575  evince 401665a0.pdf 
+ 1576  mv 401665a0.pdf emanuel_Hintensity_1999.pdf
+ 1577  evince 49712353808_ftp.pdf 
+ 1578  mv 49712353808_ftp.pdf smith_cisk_1996.pdf
+ 1579  ls
+ 1580  ls -lt
+ 1581  evince zhang_BLHscales.pdf 
+ 1582  mv zhang_BLHscales.pdf zhang_BLHscales_2011.pdf 
+ 1583  evince emanuel_theory.pdf 
+ 1584  mv emanuel_theory.pdf emanuel_theory_2011.pdf 
+ 1585  ls -lt
+ 1586  evince montgomery_wishe.pdf 
+ 1587  mv montgomery_wishe.pdf montgomery_wishe_2009.pdf 
+ 1588  ls -lt
+ 1589  cd ../
+ 1590  ls
+ 1591  mkdir auxfiles
+ 1592  cd auxfiles/
+ 1593  vim readlist.txt
+ 1594  cd /media/jlgf/Seagate\ Expansion\ Drive/
+ 1595  ls
+ 1596  cd JL_UBUNTU/
+ 1597  ls
+ 1598  cd SK/
+ 1599  ls
+ 1600  ls 
+ 1601  cd Documents/
+ 1602  ls
+ 1603  cd ../
+ 1604  ls
+ 1605  cd Jorge/
+ 1606  ls
+ 1607  cd Re
+ 1608  ls
+ 1609  cd Re
+ 1610  ls
+ 1611  cd Report/
+ 1612  ls
+ 1613  evince final_report.pdf &
+ 1614  cp final_report.tex /home/jlgf/Documents/Latex/. 
+ 1615  cd ../Results/
+ 1616  ls
+ 1617  cd ../
+ 1618  ls
+ 1619  cd Tracking/
+ 1620  ls
+ 1621  cd ../
+ 1622  ls
+ 1623  cd Latex/
+ 1624  ls
+ 1625  evince seminario.pdf 
+ 1626  cd PNumer/
+ 1627  ls
+ 1628  evince trabajofinal.pdf 
+ 1629  cd ../
+ 1630  ls
+ 1631  evince main1.pdf 1
+ 1632  cd ../
+ 1633  ls
+ 1634  cd Ubuntu\(2\)/
+ 1635  l
+ 1636  ls
+ 1637  ls *.tex
+ 1638  ls
+ 1639  cd 
+ 1640  cd Documents/
+ 1641  ls
+ 1642  cd MRes/
+ 1643  ls
+ 1644  cd auxfiles/
+ 1645  ls
+ 1646  vim readlist.txt 
+ 1647  cd ../
+ 1648  ls
+ 1649  cd ../Latex/papersummaries/
+ 1650  ls
+ 1651  vim wishe1.tex 
+ 1652  pdflatex wishe1.tex 
+ 1653  evince wishe1.pdf &
+ 1654  vim wishe1.tex 
+ 1655  pdflatex wishe1.tex 
+ 1656  vim wishe1.tex 
+ 1657  pdflatex wishe1.tex 
+ 1658  evince wishe1.pdf 
+ 1659  aspell -t -c wishe1.tex 
+ 1660  pdflatex wishe1.tex 
+ 1661  python3 
+ 1662  mkdir git
+ 1663  git clone https://github.com/matplotlib/natgrid.git git
+ 1664  cd git/
+ 1665  ls
+ 1666  python3 setup.py 
+ 1667  python3 setupegg.py 
+ 1668  cd src/
+ 1669  ls
+ 1670  cd ../
+ 1671  ls
+ 1672  cd lib/
+ 1673  ls
+ 1674  cd mpl_toolkits/
+ 1675  ls
+ 1676  python3 __init__.py 
+ 1677  ls
+ 1678  cd natgrid/
+ 1679  ls
+ 1680  python3 __init__.py 
+ 1681  cd ../
+ 1682  cd ..
+ 1683  cd
+ 1684  cd git/
+ 1685  make
+ 1686  ls
+ 1687  python3 - pip install scipy
+ 1688  pip3 install scipy
+ 1689  vim pi.py
+ 1690  python3 pi.py 
+ 1691  cd ../Documents/MRes/Project/scripts/
+ 1692  vim soundings104.py 
+ 1693  python3 soundings104.py 
+ 1694  vim soundings104.py 
+ 1695  python3 soundings104.py 
+ 1696  vim soundings104.py 
+ 1697  python3 soundings104.py 
+ 1698  vim soundings104.py 
+ 1699  python3 soundings104.py 
+ 1700  vim soundings104.py 
+ 1701  python3 soundings104.py 
+ 1702  vim soundings104.py 
+ 1703  python3 soundings104.py 
+ 1704  vim soundings104.py 
+ 1705  python3 soundings104.py 
+ 1706  vim soundings104.py 
+ 1707  python3 soundings104.py 
+ 1708  vim soundings104.py 
+ 1709  python3 soundings104.py 
+ 1710  vim soundings104.py 
+ 1711  python3 soundings104.py 
+ 1712  vim soundings104.py 
+ 1713  python3 soundings104.py 
+ 1714  vim soundings104.py 
+ 1715  python3 soundings104.py 
+ 1716  vim soundings104.py 
+ 1717  python3 soundings104.py 
+ 1718  vim soundings104.py 
+ 1719  python3 soundings104.py 
+ 1720  vim soundings104.py 
+ 1721  python3 soundings104.py 
+ 1722  vim soundings104.py 
+ 1723  python3 soundings104.py 
+ 1724  vim soundings104.py 
+ 1725  cd Documents/MRes/Project/scripts/
+ 1726  ls
+ 1727  python3 soundings104.py 
+ 1728  ls
+ 1729  vim soundings104.py 
+ 1730  ls
+ 1731  python3 soundings104.py 
+ 1732  cd
+ 1733  cd Downloads/
+ 1734  l
+ 1735  cd matlab/
+ 1736  ls
+ 1737  cd ../
+ 1738  ls
+ 1739  cd ../
+ 1740  ls
+ 1741  cd git/
+ 1742  ls
+ 1743  vim test.py 
+ 1744  python3 test.py 
+ 1745  python3 pi.py 
+ 1746  vim pi.py 
+ 1747  python3 pi.py 
+ 1748  vim pi.py 
+ 1749  python3 pi.py 
+ 1750  cd ../
+ 1751  cd Documents/MRes/Project/scripts/
+ 1752  ls
+ 1753  python3 soundings104.py 
+ 1754  vim soundings104.py 
+ 1755  python3 soundings104.py 
+ 1756  vim soundings104.py 
+ 1757  python3 soundings104.py 
+ 1758  vim soundings104.py 
+ 1759  python3 soundings104.py 
+ 1760  vim soundings104.py 
+ 1761  python3 soundings104.py 
+ 1762  vim soundings104.py 
+ 1763  python3 soundings104.py 
+ 1764  vim soundings104.py 
+ 1765  python3 soundings104.py 
+ 1766  vim soundings104.py 
+ 1767  python3 soundings104.py 
+ 1768  vim soundings104.py 
+ 1769  python3 soundings103.py 
+ 1770  vim soundings104.py 
+ 1771  python3 soundings103.py 
+ 1772  python3 soundings104.py 
+ 1773  ls
+ 1774  cd ../
+ 1775  ls
+ 1776  cd writeups/
+ 1777  ls
+ 1778  vim patricia.tex
+ 1779  pdflatex patricia.tex 
+ 1780  vim patricia.tex 
+ 1781  pdflatex patricia.tex 
+ 1782  rm patricia.aux 
+ 1783  pdflatex patricia.tex 
+ 1784  evince patricia.pdf &
+ 1785  vim patricia.tex 
+ 1786  bibtex patricia.aux 
+ 1787  pdflatex patricia.tex 
+ 1788  evince patricia.pdf &
+ 1789  vim patricia.tex 
+ 1790  pdflatex patricia.tex 
+ 1791  vim patricia.tex 
+ 1792  pdflatex patricia.tex 
+ 1793  vim patricia.tex 
+ 1794  pdflatex patricia.tex 
+ 1795  vim patricia.tex 
+ 1796  pdflatex patricia.tex 
+ 1797  vim patricia.tex 
+ 1798  pdflatex patricia.tex 
+ 1799  vim patricia.tex 
+ 1800  pdflatex patricia.tex 
+ 1801  vim patricia.tex 
+ 1802  pdflatex patricia.tex 
+ 1803  vim patricia.tex 
+ 1804  pdflatex patricia.tex 
+ 1805  vim patricia.tex 
+ 1806  exit
+ 1807  cd Documents/MRes/Project/scripts/
+ 1808  vim soundings104.py 
+ 1809  python3 soundings104.py 
+ 1810  vim soundings104.py 
+ 1811  python3 soundings104.py 
+ 1812  vim soundings104.py 
+ 1813  python3 soundings104.py 
+ 1814  vim soundings104.py 
+ 1815  python3 soundings104.py 
+ 1816  vim soundings104.py 
+ 1817  python3 soundings104.py 
+ 1818  vim soundings104.py 
+ 1819  python3 soundings104.py 
+ 1820  vim soundings104.py 
+ 1821  python3 soundings104.py 
+ 1822  vim soundings104.py 
+ 1823  python3 soundings104.py 
+ 1824  vim soundings104.py 
+ 1825  python3 soundings104.py 
+ 1826  vim soundings104.py 
+ 1827  python3 soundings104.py 
+ 1828  vim soundings104.py 
+ 1829  python3 soundings104.py 
+ 1830  vim soundings104.py 
+ 1831  rm *swp*
+ 1832  ls
+ 1833  rm .soundings104.py.swp 
+ 1834  vim soundings104.py 
+ 1835  locate wire_trans*
+ 1836  locate *wiere*
+ 1837  locate wire*
+ 1838  vim soundings104.py 
+ 1839  python3 soundings104.py 
+ 1840  vim soundings104.py 
+ 1841  ls
+ 1842  ls -lt
+ 1843  evince Tfield21.png 
+ 1844  eog Tfield21.png 
+ 1845  vim soundings104.py 
+ 1846  python3 soundings104.py 
+ 1847  vim soundings104.py 
+ 1848  python3 soundings104.py 
+ 1849  vim soundings104.py 
+ 1850  python3 soundings104.py 
+ 1851  vim soundings104.py 
+ 1852  python3 soundings104.py 
+ 1853  vim soundings104.py 
+ 1854  python3 soundings104.py 
+ 1855  vim soundings104.py 
+ 1856  python3 soundings104.py 
+ 1857  vim soundings104.py 
+ 1858  python3 soundings104.py 
+ 1859  vim soundings104.py 
+ 1860  python3 soundings104.py 
+ 1861  vim soundings104.py 
+ 1862  python3 soundings104.py 
+ 1863  vim soundings104.py 
+ 1864  python3 soundings104.py 
+ 1865  vim soundings104.py 
+ 1866  python3 soundings104.py 
+ 1867  vim soundings104.py 
+ 1868  python3 soundings104.py 
+ 1869  vim soundings104.py 
+ 1870  python3 soundings104.py 
+ 1871  vim soundings104.py 
+ 1872  python3 soundings104.py 
+ 1873  vim soundings104.py 
+ 1874  python3 soundings104.py 
+ 1875  vim soundings104.py 
+ 1876  python3 soundings104.py 
+ 1877  ls -lt
+ 1878  eog drift22
+ 1879  eog drift22.png 
+ 1880  eog drift23.png 
+ 1881  python3 soundings103.py 
+ 1882  eog drift23.png 
+ 1883  python3 soundings104.py 
+ 1884  cd ../
+ 1885  cd Project/
+ 1886  ls
+ 1887  mkdir writeups
+ 1888  cd writeups/
+ 1889  ls
+ 1890  cd 
+ 1891  cd Documents/Latex/
+ 1892  ls
+ 1893  pdflatex final_report.tex 
+ 1894  sudo apt-get install texlive-fonts-extra
+ 1895  ls
+ 1896  pdflatex final_report.tex 
+ 1897  cd ../
+ 1898  ls
+ 1899  cd Latex/
+ 1900  ls
+ 1901  mkdir template
+ 1902  cp Numeración.zip template/
+ 1903  cd template/
+ 1904  ls
+ 1905  unzip Numeración.zip 
+ 1906  ls
+ 1907  pdflatex template.tex 
+ 1908  xelatex template.
+ 1909  xelatex template.tex
+ 1910  pdflatex template.tex 
+ 1911  sudo apt-get install texlive-lang-spanish 
+ 1912  pdflatex template.tex 
+ 1913  evince template.pdf 
+ 1914  ls
+ 1915  cp template.tex ../../MRes/Project/writeups/patricia.tex 
+ 1916  cd ../../MRes/Project/writeups/
+ 1917  vim patricia.tex 
+ 1918  pdflatex patricia.tex 
+ 1919  evince patricia.pdf 
+ 1920  vim patricia.tex 
+ 1921  evince patricia.pdf 
+ 1922  pdflatex patricia.tex 
+ 1923  evince patricia.pdf 
+ 1924  vim patricia.tex 
+ 1925  pdflatex patricia.tex 
+ 1926  evince patricia.pdf 
+ 1927  vim patricia.tex 
+ 1928  cd ../
+ 1929  ls
+ 1930  cd docs/
+ 1931  ls
+ 1932  acroread report_Patricia_2015.pdf noaa_patriciareport.pdf & 
+ 1933  ls
+ 1934  cd ../writeups/
+ 1935  vim bibliografia.bib
+ 1936  pdflatex patricia.tex 
+ 1937  vim bibliografia.bib
+ 1938  pdflatex patricia.tex 
+ 1939  bibtex patricia.aux 
+ 1940  pdflatex patricia.tex 
+ 1941  bibtex patricia.aux 
+ 1942  rm patricia.aux 
+ 1943  pdflatex patricia.tex 
+ 1944  bibtex patricia.aux 
+ 1945  sudo apt-get install texlive-bibtex-extra 
+ 1946  pdflatex patricia.tex 
+ 1947  bibtex patricia.aux 
+ 1948  pdflatex patricia.tex 
+ 1949  df -h
+ 1950  cd
+ 1951  cd Documents/MRes/Project/writeups/
+ 1952  ls
+ 1953  cd ../scripts/
+ 1954  ls
+ 1955  vim soundings104.py 
+ 1956  python3 soundings104.py 
+ 1957  vim soundings104.py 
+ 1958  python3 soundings104.py 
+ 1959  vim soundings104.py 
+ 1960  python3 soundings104.py 
+ 1961  vim soundings104.py 
+ 1962  python3 soundings104.py 
+ 1963  vim ../Data/2015/Patricia/g142835054.avp 
+ 1964  vim soundings104.py 
+ 1965  python3 soundings104.py 
+ 1966  vim soundings104.py 
+ 1967  python3 soundings104.py 
+ 1968  cd ../writeups/
+ 1969  pdflatex patricia.tex 
+ 1970  exit
+ 1971  cd Documents/MRes/
+ 1972  ls
+ 1973  cd ../Latex/
+ 1974  ls
+ 1975  ssh earwrf04@arc2.leeds.ac.uk 
+ 1976  ssh earwrf04@arc2.leeds.ac.uk -X 
+ 1977  cd Downloads/
+ 1978  bash SecureW2_JoinNow.run 
+ 1979  ssh earwrf04@arc2.leeds.ac.uk -X 
+ 1980  cd Documents/MRes/
+ 1981  ls
+ 1982  cd nclexercises/
+ 1983  ls
+ 1984  scp earwrf04@arc2.leeds.ac.uk:nobackup/jlgf/Katrina/ej3* . 
+ 1985  evince ej3_* &
+ 1986  ssh ceilo@132.248.8.37 -X 
+ 1987  cd Documents/
+ 1988  mkdir UNAM
+ 1989  cd UNAM/
+ 1990  scp ceilo@132.248.8.37:/home/D1_CEILO/TOLU/Results_day/Preliminary/mlh_db.csv . 
+ 1991  ssh earwrf04@arc2.leeds.ac.uk -X 
+ 1992  cd Documents/MRes/nclexercises/
+ 1993  ls
+ 1994  evince ej3_* 
+ 1995  cd Documents/MRes/DataScience/
+ 1996  cd ../Project/
+ 1997  ls
+ 1998  cd writeups/
+ 1999  ls
+ 2000  evince patricia.pdf &
+ 2001  cd Documents/
+ 2002  cd MRes/
+ 2003  ls
+ 2004  vim todolist.txt 
+ 2005  cd Project/Data/2015/
+ 2006  ls
+ 2007  cd Patricia/
+ 2008  ls
+ 2009  vim g132855151.avp 
+ 2010  vim g132855157.avp 
+ 2011  grep -r "WB-57"
+ 2012  grep -r "WP-3D"
+ 2013  cd ../2005
+ 2014  cd ../../2005/
+ 2015  ls
+ 2016  cd Rita/
+ 2017  ls
+ 2018  cd gps.qc.eol/
+ 2019  ls
+ 2020  cd GIV/
+ 2021* ls1
+ 2022  vim D20050922_203150.993215189_PQC.eol.radazm.Wwind 
+ 2023  cd ../
+ 2024  ls
+ 2025  cd P-3.43/
+ 2026  ls
+ 2027  vim D20050922_204050.012625035_PQC.eol.radazm.Wwind 
+ 2028  cd ../../../../
+ 2029  cd ../scripts/
+ 2030  ls
+ 2031  vim soundings104.py 
+ 2032  vim soundings101.py 
+ 2033  vim soundings103.py 
+ 2034  cp soundings103.py soundings105.py 
+ 2035  git add . 
+ 2036  git commit -m "Second commit before changing from Patricia to Rita"
+ 2037  git push 
+ 2038  ls
+ 2039  vim soundings105.py 
+ 2040  vim ../Data/2005/Rita/
+ 2041  vim ../Data/2005/Rita/gps.qc.eol/P-3.43/D20050922_204050.012625035_PQC.eol.radazm.Wwind 
+ 2042  history > hist.txt
