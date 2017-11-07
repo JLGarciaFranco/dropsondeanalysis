@@ -100,7 +100,12 @@ os.system('ls ../Data/'+year+'/*')
 storm=input("What storm are you looking for?")
 filelist=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/GIV/*')
 filelist2=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/P-3.43/*')
-filelist=filelist+filelist2
+import subprocess
+print(subprocess.run(['ls', '-l'], stdout=subprocess.PIPE).stdout.decode('utf-8'))
+filelist3=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/P-3.43/*')
+filelist4=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/GIV/*')
+filelist5=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/P-3.42/*')
+filelist=filelist+filelist2+filelist5
 filelist=np.sort(filelist)
 os.system('mkdir ../figs/'+storm)
 figdir='/home/jlgf/Documents/MRes/Project/figs/'+storm+'/'
@@ -231,7 +236,7 @@ for dd in daylist:
         plt.ylabel('Latitude ',fontsize=15)
         plt.grid()
         plt.legend(title='Time',fontsize=8.5)
-        plt.savefig(figdir+str(dd)+var+storm+str(ll)+'.png')
+        plt.savefig(figdir+str(dd)+var+storm+str(ll)+'_2.png')
     #    plt.show()
         plt.close()
 
