@@ -115,7 +115,7 @@ def getleg(lats,lons,r0):
 	return newlats,newlongs,r
 def interp(H,T,tipo):
 #	print(H.shape[1])
-	print(H.shape)
+#	print(H.shape)
 	if tipo == 'height':
 		jump=10
 	elif tipo == 'pressure':
@@ -129,8 +129,8 @@ def interp(H,T,tipo):
 		if np.nanmax(h)<maxh:
 			maxh=np.nanmax(h)
 	hnew=np.arange(minh,maxh,jump)
+	#print(hnew)
 	print(hnew)
-#	print(hnew)
 	tnew=np.empty([H.shape[1],len(hnew)])
 	for i in range(0,H.shape[1]):
 		t=T[i,:]
@@ -175,13 +175,33 @@ def reshape(lat,lon,dicc):
 		ii+=1
 		distances.append(r)
 	for i,r0 in enumerate(distances):
-		if r0>300:
+		if r0>400:
 			print(r0)
 			del distances[i]
 			del newdicc[lon[i]]
 			newlat=np.delete(newlat,i)
 			newlon=np.delete(newlon,i)
-	plt.plot(distances)
-	plt.show()
-	print(distances)
+#	plt.plot(distances)
+	#plt.show()
+	#print(distances)
 	return newlat,newlon,newdicc,distances
+def findvalues(z,level):
+        i=0
+        zi=z[i]
+        index=[]
+        while np.abs(zi-level)>10 or np.isnan(zi):
+                i+=1
+                zi=z[i]
+                if i==len(z)-3:
+                        return
+        index.append(i)
+        i+=1
+        zi=z[i]
+
+        while np.abs(zi-level)<10 or np.isnan(zi):
+                index.append(i)
+                i+=1
+                zi=z[i]
+                if i==len(z)-3:
+                        return
+        return index

@@ -108,8 +108,10 @@ def vsection(filelist,end):
 					P=nump[:,5]
 					H=nump[:,13]
 					RH=nump[:,7]
-					u=nump[:,9]
+					ur=nump[:,9]
 					udir=nump[:,8]
+					u=-ur*np.sin(np.pi*udir/180)
+					v=-ur*np.cos(np.pi*udir/180)
 					w=nump[:,10]
 				elif end == 'radazm':
 					T=nump[:,5]
@@ -125,6 +127,7 @@ def vsection(filelist,end):
 					w=nump[:,10]
 					lon=nump[:,14]
 					lat=nump[:,15]
+					v=clean2(cleanu(clean1(v)))
 				lon=clean2(clean1(lon))
 				lat=clean2(clean1(lat))
 				mlon=np.nanmean(lon)
@@ -140,17 +143,17 @@ def vsection(filelist,end):
 				P=clean2(cleanu(cleanp(clean1(P))))
 				H0=clean1(H)
 				T=cleanu(clean2(T))
-				v=clean2(cleanu(clean1(v)))
+
 				H=clean2(H0)
 				u=clean2(cleanu(clean1(u)))
 				w=cleanu(clean2(clean1(w)))
 				#plt.plot(w)
 				#plt.show()
 				rh=clean2(clean1(RH))
-				print(len(H))
+				#print(len(H))
 				#plt.plot(u)
 				#H,u,w,rh,T=finalclean(H,u,w,rh,T)
-				print(len(T))
+				#print(len(T))
 				if len(T)>maxr:
 					maxr=len(T)
 				#plt.plot(T)
@@ -177,12 +180,15 @@ def vsection(filelist,end):
 			u[i,:]=refill(latlon[key][4],maxr)
 			P[i,:]=refill(latlon[key][5],maxr)
 			v[i:,]=refill(latlon[key][6],maxr)
+		#plt.contourf(P)
+		#plt.show()
 		h,rhh=interp(H,rh,'height')
-		if len(h)==0:
-			continue
+
 		h,P0=interp(H,P,'height')
 	#	plt.contour(w)
 	#S	h,w=interp(H,u)
+		if len(h)==0:
+			continue
 		print(len(lons),len(latlon.keys()))
 	#	plt.contour(w)
 	#	plt.show()
@@ -196,17 +202,39 @@ def vsection(filelist,end):
 		#zi = LinearNDInterpolator
 		#f = interpolate.interp2d(xs, h, P0.T, kind='cubic')
 		#zi=f(xi,yi)
+		print(np.min(P0),np.nanmax(P0))
 		#zi = griddata(xs,h,P0.T,xi,yi)
 		#f = interpolate.interp2d(x, y, P0.T, kind='cubic')
 		#znew=f(xi,yi)
 		#c1=axarr[0].contourf(xi,yi,zi,cmap=plt.cm.jet,levels=np.arange(np.nanmin(zi),np.nanmax(zi),1))
 		c1=axarr[0,0].contourf(X,Y,P0.T,cmap=plt.cm.jet,levels=np.arange(np.nanmin(P0),np.nanmax(P0),1))
+		for i in range(0,len(xs)):
+			for j in range(0,len(h),10):
+				pval=P0[i,j]
+				print(pval)
+				ur=u[i,np.where(np.abs(P[i,:]-pval)<0.25)[0]]
+				vr=v[i,np.where(np.abs(P[i,:]-pval)<0.25)[0]]
+				ur=np.nanmean(ur)
+				vr=np.nanmean(vr)
+				if ur > 100 or vr >100:
+					continue
+				if i==0:
+					offset=10
+				elif i==len(xs)-1:
+					offset=-10
+				else:
+					offset=0
+				axarr[0,0].barbs(xs[i]+offset,h[j],ur,vr)
 		for i,xc in enumerate(xs):
 			axarr[0,0].axvline(x=xc)
+		axarr[0,0].set_xlim([0,xs[-1]])
+		axarr[0,0].set_ylim([np.min(h),h[-1]])
 			#axarr[0,0].barbs(H,u,v)
 		p,T=interp(P.T,T,'pressure')
+		#plt.contourf(T)
+		#plt.show()
 		axarr[0,0].set_title('Pressure')
-		axarr[0,0].set_xlabel('Distance')
+		#axarr[0,0].set_xlabel('Distance')
 		axarr[0,0].set_ylabel('Geopotential Height (m)')
 	#	f = interpolate.interp2d(xs, p, T.T, kind='cubic')
 		#xi=np.linspace(np.nanmin(xs),np.max(xs))
@@ -215,7 +243,7 @@ def vsection(filelist,end):
 		X,Y=np.meshgrid(xs,p)
 		c2=axarr[0, 1].contourf(xs, p, T.T,cmap='coolwarm',levels=np.arange(np.nanmin(T),np.nanmax(T),0.1))
 		axarr[0,1].set_title('Temperature')
-		axarr[0,1].set_xlabel('Distance')
+		#axarr[0,1].set_xlabel('Distance')
 		axarr[0,1].set_ylabel('Pressure (hPa)')
 		p,rh=interp(P.T,rh,'pressure')
 		X,Y=np.meshgrid(xs,p)
@@ -232,16 +260,19 @@ def vsection(filelist,end):
 		#zi=f(xi,yi)
 		X,Y=np.meshgrid(xs,p)
 		c4=axarr[1, 1].contourf(X,Y,w.T,cmap=plt.cm.jet,levels=np.arange(np.nanmin(w),np.nanmax(w),0.25))
+		fig.colorbar(c1, ax=axarr[0,0],label='hPa')
+		fig.colorbar(c2, ax=axarr[0,1],label=r'$\degree$ C')
+		fig.colorbar(c3, ax=axarr[1,0],label='\%')
+		fig.colorbar(c4, ax=axarr[1,1],label='m/s')
 		axarr[1,1].set_title('Vertical speed')
 		axarr[1,1].set_xlabel('Distance')
 		axarr[1,1].set_ylabel('Pressure (hPa)')
 		#axarr[1].set_title('Original')
 		#axarr[0].set_title('Interpolated')
-		plt.suptitle(storm+' '+str(sdt))
-		fig.colorbar(c1, ax=axarr[0,0],label='hPa')
-		fig.colorbar(c2, ax=axarr[0,1],label=r'$\degree$ C')
-		fig.colorbar(c3, ax=axarr[1,0],label='\%')
-		fig.colorbar(c4, ax=axarr[1,1],label='m/s')
+
+		plt.suptitle(storm+' '+str(sdt),fontsize=18)
+
 		plt.tight_layout()
+		fig.subplots_adjust(top=0.925)
 		plt.show()
 	#	print(type(np.array(x)),H[:,0].shape,T.shape)
