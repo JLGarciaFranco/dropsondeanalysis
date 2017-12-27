@@ -8,6 +8,7 @@ import glob
 import sys
 from vcsections import *
 from hcrossections import *
+from cylindrical import *
 from flightdata import getrack
 #def gettingdays(filelist)
 figdir='/home/jlgf/Documents/MRes/Project/figs/'
@@ -19,18 +20,19 @@ if int(year)>2012:
 else:
     downloadtype='radazm'
 if downloadtype == 'radazm':
-    filelist=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/4GIV/*')
-    filelist6=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/4GIV/*')
+    filelist=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/2GIV/*')
+    filelist6=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/G2IV/*')
     filelist2=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/P-3.43/*')
+    filelist7=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/P-3.42/*')
     filelist3=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/P-3.43/*')
     filelist4=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/noaa.P-3/*')
-    filelist5=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/P-23.42/*')
-    filelist=filelist+filelist2+filelist5+filelist3+filelist4+filelist6
+    filelist5=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/P-3.42/*')
+    filelist=filelist+filelist2+filelist5+filelist3+filelist4+filelist6+filelist7
 elif downloadtype =='avp':
     filelist=glob.glob('../Data/'+year+'/'+storm+'/*')
 track=getrack(storm,year)
-print(track[0])
 filelist=np.sort(filelist)
 os.system('mkdir ../figs/'+storm)
-#vsection(filelist,downloadtype)
-hsection(filelist,downloadtype,storm)
+vsection(filelist,downloadtype,track,storm)
+#hsection(filelist,downloadtype,storm,track)
+#plotuv(filelist,downloadtype,storm,track)

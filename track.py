@@ -8,7 +8,7 @@ pacific='../Data/PacificTrack.txt'
 def readtrack(filename,basin):
     f=open(filename,'r')
     a=f.readlines()
-    dicc={'Storm Name':[],'Datetime':[],'Longitude':[],'Latitude':[],'pressure':[],'Intensity':[],'Basin':[]}
+    dicc={'Storm Name':[],'Datetime':[],'Longitude':[],'Latitude':[],'pressure':[],'Intensity':[],'Basin':[],'Year':[]}
     f.close()
     ii=0
     line=a[ii]
@@ -25,7 +25,7 @@ def readtrack(filename,basin):
         while len(line.split(','))>5 and ii<len(a)-1:
             strings=line.split(',')
             dt=datetime.datetime(int(strings[0][0:4]),int(strings[0][4:6]),int(strings[0][6:8]),int(strings[1][1:3]),int(strings[1][3:5]))
-            newlist=[stormname,dt,strings[5],strings[4],int(strings[7]),strings[3],basin]
+            newlist=[stormname,dt,strings[5],strings[4],int(strings[7]),strings[3],basin,dt.year]
             ii+=1
             line=a[ii]
             for j,key in enumerate(dicc.keys()):
