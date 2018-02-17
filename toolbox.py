@@ -69,7 +69,7 @@ def findproperties(filename,database):
 	#print(l1,l2,ls)
 	diccionario['Sounding name']=l1[-1]
 	ls=ls[1].split(',')
-	diccionario['lon,lat,alt']=ls[2:]
+	diccionario['lon,lat,alt']=ls[1:]
 	#print(l2)
 	diccionario['Launch Time']=l2[1]
 	#print(l2[1])
@@ -115,8 +115,8 @@ def interp(H,T,tipo):
 		jump=10
 	elif tipo == 'pressure':
 		jump=2
-	minh=50
-	maxh=1500
+	minh=0
+	maxh=3000
 	#print(H)
 	for i in range(0,H.shape[1]):
 		h=H[:,i]
@@ -129,15 +129,13 @@ def interp(H,T,tipo):
 		if np.nanmax(h)<maxh:
 			#maxh=np.nanmax(h)
 			slvec=np.insert(slvec,-1,np.nan)
-			h=np.insert(h,-1,1500)
+			h=np.insert(h,-1,2500)
 	#	if len(h)>H.shape[0]:
 			#H=np.reshape(H,(len(h),H.shape[1]))
 		#H[:,i]=h
 		#T[i,:]=slvec
 	#print(minh,maxh)
-	hnew=np.arange(50,2500,jump)
-	#print(hnew1)
-	#print(hnew)
+	hnew=np.arange(0,2500,jump)
 	tnew=np.empty([H.shape[1],len(hnew)])
 	for i in range(0,H.shape[1]):
 		t=T[i,:]
@@ -162,6 +160,7 @@ def refill(h,maxr):
 			h=np.insert(h,counti,np.nan)
 			counti+=1
 	return h
+#Function to estimate and u and v relative to the storm montion
 def stormu(u,v,date,dicc):
 	#print(type(date))
 	dates=dicc['Datetime']
@@ -185,10 +184,10 @@ def stormu(u,v,date,dicc):
 			goodate=dt
 			td=newtd
 			ii=i
-	#print(u,v,us[ii],vs[ii])
+	print(date,goodate,u,v,us[ii],vs[ii])
 	#x=yy
-	newu=u-us[ii]
-	newv=v-vs[ii]
+	newu=u#-us[ii]
+	newv=v#-vs[ii]
 	return newu,newv
 def backtoxy(rs,thetas,u,v,trackdata):
 	xs=[]
@@ -197,56 +196,77 @@ def backtoxy(rs,thetas,u,v,trackdata):
 	for i,r in enumerate(rs):
 		xs.append(r*cos(thetas[i]))
 		ys.append(r*sin(thetas[i]))
-	xaxis=np.linspace(np.min(xs)-1,np.max(xs)+1,100)
+	xaxis=np.linspace(np.min(xs)-1,np.max(xs)+1,0)
 	yaxis=np.linspace(np.min(ys)-1,np.max(ys)+1,100)
 	uinterp = griddata((xs, ys), u, (xaxis[None,:], yaxis[:,None]), method='linear')
 	vinterp = griddata((xs, ys), v, (xaxis[None,:], yaxis[:,None]), method='linear')
-#	plt.scatter(xs,ys)
-	#plt.colorbar()
-	#plt.grid()
-	#plt.show()
-#	plt.contourf(xaxis,yaxis,vinterp,cmap='RdBu',levels=np.arange(np.min(v),np.max(v),1))
-	#plt.colorbar()
-	#plt.show()
+
 	return xaxis,yaxis,uinterp,vinterp
 def getcenter(dates,track):
 	dt,traclat,traclon,dicc=track
+	df=dicc['Ntrack']
 	goodate=dt[0]
+	#print(len(traclat),len(dt),len(traclon))
 #	print(goodate,dates)
 	#print(type(goodate),type(dates))
 	if goodate>dates:
 		td=goodate-dates
 	else:
 		td=dates-goodate
+	lats=[]
+	lons=[]
 	for i,date in enumerate(dt):
 		if date > dates:
 			newtd=date-dates
 		else:
 			newtd=dates-date
+		if newtd<datetime.timedelta(minutes=10):
+			lats.append(traclat[i])
+			lons.append(traclon[i])
+			#print(date,goodate,dates,traclat[i],traclon[i])
 		if newtd<td:
 			goodate=date
 			td=newtd
-	ii=dt.index(goodate)
-	return traclat[ii],traclon[ii]
+			ii=i
+			lat=traclat[i]
+			lon=traclon[i]
+	if len(lats)>1:
+		latf=np.nanmean(np.array(lats))
+		lonf=np.nanmean(np.array(lons))
+		print(lonf,latf,lat,lon)
+	else:
+		latf=lat
+		lonf=lon
+	hours, remainder = divmod(newtd.seconds, 3600)
+	#print(newtd.days,hours)
+	#dt=df.loc[goodate]
+	#print(goodate,dates)
+#	print(dt['Latitude'],type(dt['Longitude']))
+	return latf,lonf
 def xytorth(lon,lat,track,dates):
 	lat2 = radians(np.abs(lat))
 	lon2 = radians(np.abs(lon))
 	clat,clon=getcenter(dates,track)
+	#print(clat,clon)
 	lat1=radians(np.abs(clat))
 	lon1=radians(np.abs(clon))
 	r=distance(lat1,lon1,lat2,lon2)
+	if r < 50:
+		print(r)
+		print(dates)
+		#print(track)
 	dlon = lon2 - lon1
 	dlat = lat2 - lat1
 	ry=distance(lat1,lon1,lat2,lon1)
 	rx=distance(lat1,lon1,lat1,lon2)
-	if dlon <0:
+	if dlon >0:
 		rx=-rx
 	if dlat <0:
 		ry=-ry
    # print(rx,ry,r)
 	theta=np.arctan2(ry,rx)
-	if theta<0:
-		theta=2*np.pi+theta
+	#if theta<0:
+		#theta=2*np.pi+theta
 	return r,theta
 	#θ = atan2(sin(Δlong)*cos(lat2), cos(lat1)*sin(lat2) − sin(lat1)*cos(lat2)*cos(Δlong))
 def reshape(lat,lon,dicc):
@@ -261,7 +281,7 @@ def reshape(lat,lon,dicc):
 		nkey=longi
 		newdicc[nkey]=dicc[key]
 	distances=[0]
-	print(newlon,lon)
+#	print(newlon,lon)
 	lon0=newlon[0]
 	lat0=newlat[0]
 	ii=1
@@ -273,7 +293,7 @@ def reshape(lat,lon,dicc):
 		distances.append(r)
 	for i,r0 in enumerate(distances):
 		if r0>400:
-			print(r0)
+		#	print(r0)
 			del distances[i]
 			del newdicc[lon[i]]
 			newlat=np.delete(newlat,i)
@@ -302,12 +322,39 @@ def findvalues(z,level):
                 if i==len(z)-3:
                         return
         return index
-def reassemble(r,matrix):
-	print(np.nanmin(r))
+def reassemble(r,matrix,H):
 	newr=np.sort(r)
 	newmatrix=np.zeros(matrix.shape)
 	for i,r0 in enumerate(newr):
 		ii=np.where(r==r0)
 		ii=ii[0][0]
 		newmatrix[i,:]=matrix[ii,:]
-	return newr,newmatrix
+	longdic={}
+	for ri in np.arange(0,3,.25):
+		shortdicc={}
+		for i,r0 in enumerate(newr):
+			if r0-ri <0.25 and r0-ri>0:
+				shortdicc[r0]=newmatrix[i,:]
+			#else:
+			#	print(r0)
+		rlen=len(shortdicc.keys())
+		if rlen==0:
+			continue
+		#print(rlen)
+		A=np.zeros((rlen,newmatrix.shape[1]))
+		for i,key in enumerate(shortdicc.keys()):
+			A[i,:]=shortdicc[key]
+		#	plt.plot(A[i,:],H,label=key)
+		#plt.plot(np.nanmean(A,axis=0),H,label='mean')
+		#plt.legend()
+		#plt.show()
+		longdic[ri]=np.nanmean(A,axis=0)
+	AA=np.zeros((len(longdic.keys()),newmatrix.shape[1]))
+#	print(AA.shape)
+	rr=[]
+	for j,key in enumerate(longdic.keys()):
+		AA[j,:]=longdic[key]
+		rr.append(key)
+	#plt.contourf(AA.T,cmap='rainbow')
+	#plt.show()
+	return rr,AA

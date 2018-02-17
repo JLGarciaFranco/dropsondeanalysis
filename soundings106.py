@@ -6,7 +6,7 @@ import os
 import datetime
 import glob
 import sys
-from vcsections import *
+from axisym import *
 from hcrossections import *
 from cylindrical import *
 from flightdata import getrack
@@ -20,8 +20,8 @@ if int(year)>2012:
 else:
     downloadtype='radazm'
 if downloadtype == 'radazm':
-    filelist=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/2GIV/*')
-    filelist6=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/G2IV/*')
+    filelist=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/GIV/*')
+    filelist6=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/GIV/*')
     filelist2=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/P-3.43/*')
     filelist7=glob.glob('../Data/'+year+'/'+storm+'/gps.qc.eol/P-3.42/*')
     filelist3=glob.glob('../Data/'+year+'/'+storm+'/ublox.qc.eol/P-3.43/*')
@@ -32,7 +32,7 @@ elif downloadtype =='avp':
     filelist=glob.glob('../Data/'+year+'/'+storm+'/*')
 track=getrack(storm,year)
 filelist=np.sort(filelist)
-os.system('mkdir ../figs/'+storm)
-vsection(filelist,downloadtype,track,storm)
+#os.system('mkdir ../figs/'+storm)
+#axics(filelist,downloadtype,track,storm)
 #hsection(filelist,downloadtype,storm,track)
-#plotuv(filelist,downloadtype,storm,track)
+plotuv(filelist,downloadtype,storm,track)
