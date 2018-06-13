@@ -1,0 +1,48 @@
+.. Dropsonde Observations documentation master file, created by
+   sphinx-quickstart on Mon Mar 19 16:23:27 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+PyDropsondes
+======================================================================================
+
+A Visualization Toolkit for Dropsonde Observations of Tropical Cyclones
+------------------------------------------------------------------------
+
+by *Garcia-Franco J.L.*
+
+Welcome to the docs
+---------------------
+
+PyDropsondes is a Python-based interface that interacts with the user to read, process and create stylish output showing the main thermodynamic
+and dynamic metrics derived from dropsonde measurements.
+
+.. image:: irma.gif
+  :align: center
+
+.. note::
+   This is the documentation provided by the `Sphinx Python <http://www.sphinx-doc.org/en/master/>`_. module, extended with the
+   `Sphinx Gallery <http://sphinx-gallery.readthedocs.io/en/latest/index.html>`_.
+   This page provides a detailed account of the scripts used in the Project by three main tools:
+            1. An index (bellow) and diagram (:ref:`userguide`) showing how different scripts, modules and functions interconnect and feed from each other.
+            2. A module by module and function by function in-line documentation of all the code. Refer to index if you get lost or looking to some particular snippet.
+            3. An example gallery (:ref:`gallery`), where you can find examples of possible plots using the Dropsonde Dataset.
+
+.. toctree::
+  :maxdepth: 3
+  :caption: Table of Contents:
+
+  userguide
+  interface
+  flight
+  process
+  tools
+  gallery
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

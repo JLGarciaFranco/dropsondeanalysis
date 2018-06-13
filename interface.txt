@@ -1,0 +1,42 @@
+.. Interface
+
+The Interface
+========================
+
+Python scripts can interact with a user in a variety of ways, either through a proper graphic interface,
+the use of buttons in the mouse to direct and signal processing and through simpler, less sophisticated,
+user-script communication.
+
+For this project, the latter case was chosen for the main reason that the purpose of
+the visualization tool is mainly to produce output relevant for TC studies while less focus is placed
+on how the visualization takes place.
+
+Details.
+
+1. As most connected-scripts, is written in Python 3.5 to be run in a Linux-GNU terminal.
+2. Interaction with the user through simple questions where options are offered in advance.
+3. Error control: the interface recognizes wrong choices by the user, as well as possibly misleading or
+impossible calculations.
+
+.. figure:: imgs/interface.png
+  :align: center
+
+  Screenshot of interface greeting message.
+
+
+Above, the interface greeting message is shown. Shortly after this, the user is asked to enter storm year and name.
+
+The interface will then make use of :ref:`flightdata` to obtain track information that is systematically used by all scripts.
+Subsequently, the interface will ask the user to select the plots or variables they are interested in.
+
+An example on how to fill-in the requests by the python code is presented below:
+
+.. figure:: imgs/filled-interface.png
+  :align: center
+
+  Screenshot of a selection of the storm Dolly for the year 2008.
+
+Notice how the name and year of the storm must be written without spaces.
+
+
+.. automodule:: main_interface
