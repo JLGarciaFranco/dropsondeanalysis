@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Flightdata &mdash; PyDropsondes 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="PyDropsondes 1 documentation" href="index.html"/>
+        <link rel="next" title="Process Dropsondes" href="process.html"/>
+        <link rel="prev" title="The Interface" href="interface.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="home.html" class="icon icon-home"> PyDropsondes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">The Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Flightdata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main-function">Main function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="process.html">Process Dropsondes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">The Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery of Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="home.html">PyDropsondes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="home.html">Docs</a> &raquo;</li>
+        
+      <li>Flightdata</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/flight.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="flightdata">
+<h1>Flightdata<a class="headerlink" href="#flightdata" title="Permalink to this headline">¶</a></h1>
+<p>Aircrafts are one of the best (and more expensive) tools to make in-situ samplings of the atmosphere
+with good spatial resolution.
+In fact, Tropical Cyclones are one of the best suited phenomena to be sampled through the use of aircraft measurements due
+to the predicaments and perils associated with the high winds and precipitation in these convective systems.</p>
+<p>After several successful attempts to sample Tropical Cyclones using aircraft, some remote sensing and in-situ instruments were deployed
+on-board. As time elapsed, campaigns from <a class="reference external" href="https://www.omao.noaa.gov/learn/aircraft-operations/about/hurricane-hunters">NOOA</a>, NASA and the US Air Force
+have used radiometers, micrometers, radars, etc. These instruments are used to measure wind, reflectivity and other fields along the track of the aircraft.
+In 2015, <a class="reference internal" href="#vigh2015flight" id="id1">[V+15]</a> made public a dataset of flight level data that can be downloaded <a class="reference external" href="https://verif.rap.ucar.edu/tcdata/flight/">here</a>.</p>
+<p>From this flight level data three main parameters are used:</p>
+<ol class="arabic simple">
+<li>Storm track with resolution in the order of minutes.</li>
+<li>Storm speed and motion with resolution in the order of tens of minutes.</li>
+<li>Radius of Maximum wind timeseries (resolution of <span class="math">\(\sim\)</span> 10 minutes).</li>
+</ol>
+<p>Combined with the data of these instruments, this module also reads-in data from the <a class="reference external" href="https://www.nhc.noaa.gov/data/#hurdat">best track</a> dataset to read-in this track and join it with the
+one from the flight-level data.</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/giv.jpg"><img alt="_images/giv.jpg" src="_images/giv.jpg" style="width: 65%;" /></a>
+<p class="caption"><span class="caption-text">NOAA’s Gulfstream IV-SP (G-IV) typically used to sample the environment of Tropical Cyclones and usually launches
+dropsondes from high altitudes (<span class="math">\(&gt;10\)</span> km).</span></p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-flightdata"></span><p>This module aims to obtain significant data and meta-data from the flight-level files (downloaded from <a class="reference internal" href="#vigh2015flight" id="id2">[V+15]</a>) that contain information about the following parameters:</p>
+<ol class="arabic simple">
+<li>Centre track of Tropical Cyclones using the <a class="reference internal" href="#willoughby" id="id3">[WC82]</a> method with a very good temporal resolution (<span class="math">\(\sim 5\)</span> minutes).</li>
+<li>Radius of Maximum Wind derived from wind measurements.</li>
+<li>Storm speed (wind speed vector of storm motion) <span class="math">\(\hat{u_s}=(u_c,v_c)\)</span> where <span class="math">\(u_c\)</span> and <span class="math">\(v_c\)</span> refer to the x and y components of the storm motion speed vector ( <span class="math">\(\hat{u_s}\)</span> ).</li>
+</ol>
+<p>Simultaneously</p>
+<p>This module is briefly divided in the following way:</p>
+<ol class="arabic simple">
+<li>Preamble, loading all packages, functions and modules to be used.</li>
+<li>Read-in and process of best track-file.</li>
+<li>Read-in and process of flight-level data.</li>
+</ol>
+<p>While several functions were used in the first construction of this module, it now operates based on one single
+unified function that carries all the computations and basically does everything.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This module uses functions from the toolbox:</p>
+<p><a class="reference internal" href="tools.html#toolbox.distance" title="toolbox.distance"><code class="xref py py-meth docutils literal"><span class="pre">toolbox.distance()</span></code></a></p>
+<p>And it is the functional basis of most scripts that use this dataset. For example, functions like:</p>
+<p class="last"><a class="reference internal" href="tools.html#toolbox.getsamplingperiods" title="toolbox.getsamplingperiods"><code class="xref py py-meth docutils literal"><span class="pre">toolbox.getsamplingperiods()</span></code></a>, <a class="reference internal" href="tools.html#toolbox.stormu" title="toolbox.stormu"><code class="xref py py-meth docutils literal"><span class="pre">toolbox.stormu()</span></code></a>, etc.</p>
+</div>
+<div class="section" id="main-function">
+<h2>Main function<a class="headerlink" href="#main-function" title="Permalink to this headline">¶</a></h2>
+</div>
+<dl class="function">
+<dt id="flightdata.trackandspeed">
+<code class="descclassname">flightdata.</code><code class="descname">trackandspeed</code><span class="sig-paren">(</span><em>storm</em>, <em>year</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flightdata.html#trackandspeed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flightdata.trackandspeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>** Obtain track and speed from flight level data and best track data. **</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>storm: <cite>string</cite></dt>
+<dd>Name of storm.</dd>
+<dt>year: <cite>string</cite></dt>
+<dd>Year of storm.</dd>
+</dl>
+<p>This function makes use of the function <a class="reference internal" href="tools.html#toolbox.distance" title="toolbox.distance"><code class="xref py py-meth docutils literal"><span class="pre">toolbox.distance()</span></code></a>
+Also, this function was the basis of <a class="reference internal" href="examples/plotrack.html#sphx-glr-auto-examples-plot-track-py"><span class="std std-ref">Plotting the track of a Tropical Cyclone</span></a> so there will be strong similarities.
+Nevertheless, this function comprises more processing and requires further information than that example.</p>
+<dl class="docutils">
+<dt><em>Returns</em></dt>
+<dd>dtime,flat,flon,speeddic:<cite>4-element tuple</cite></dd>
+<dt>dtime: <cite>list</cite></dt>
+<dd>List of datetime objects.</dd>
+<dt>flat: <cite>list</cite></dt>
+<dd>List of track latitudes.</dd>
+<dt>flon: <cite>list</cite></dt>
+<dd>List of track longitudes.</dd>
+<dt>speeddic: <cite>dictionary</cite></dt>
+<dd>Dictionary of storm speed related metrics.</dd>
+</dl>
+</dd></dl>
+
+<p id="bibtex-bibliography-flight-0"><table class="docutils citation" frame="void" id="bell2005" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[BM08]</td><td>Michael&nbsp;M. Bell and Michael&nbsp;T. Montgomery. Observed structure, evolution, and potential intensity of category 5 hurricane isabel (2003) from 12 to 14 september. <em>Monthly Weather Review</em>, 136(6):2023–2046, 2008. URL: <a class="reference external" href="https://doi.org/10.1175/2007MWR1858.1">https://doi.org/10.1175/2007MWR1858.1</a>, <a class="reference external" href="https://doi.org/10.1175/2007MWR1858.1">doi:10.1175/2007MWR1858.1</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bogner2000" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[BBF00]</td><td>Paul&nbsp;B Bogner, Gary&nbsp;M Barnes, and James&nbsp;L Franklin. Conditional instability and shear for six hurricanes over the atlantic ocean. <em>Weather and forecasting</em>, 15(2):192–207, 2000.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bolton1980" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Bol80]</td><td>David Bolton. The computation of equivalent potential temperature. <em>Monthly Weather Review</em>, 108(7):1046–1053, 1980. URL: <a class="reference external" href="https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2">https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2">arXiv:https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2">doi:10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="emanuel1986" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Ema86]</td><td>Kerry Emanuel. An air-sea interaction theory for tropical cyclones. Part I: Steady-state maintenance. <em>Journal of the Atmospheric Sciences</em>, 1986. doi:10.1175/1520-0469(1986)043&lt;0585:AASITF&gt;2.0.CO;2.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="molinari2010" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[MV10]</td><td>John Molinari and David Vollaro. Distribution of helicity, cape, and shear in tropical cyclones. <em>Journal of the Atmospheric Sciences</em>, 67(1):274–284, 2010.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="montgomery2009" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[M+09]</td><td>Michael&nbsp;T Montgomery and others. Do tropical cyclones intensify by WISHE? <em>Quarterly Journal of the Royal Meteorological Society</em>, 2009. doi:10.1002/qj.459.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="montearl" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[M+14]</td><td>Michael&nbsp;T Montgomery and others. An analysis of the observed low-level structure of rapidly intensifying and mature hurricane earl (2010). <em>Quarterly Journal of the Royal Meteorological Society</em>, 2014. doi:10.1002/qj.2283.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="schwendike" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[SK08]</td><td>Juliane Schwendike and Jeffrey&nbsp;D Kepert. The boundary layer winds in Hurricanes Danielle (1998) and Isabel (2003). <em>Monthly Weather Review</em>, 2008. doi:10.1175/2007MWR2296.1.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="vigh2015flight" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[V+15]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> JL&nbsp;Vigh and others. FLIGHT+: The Extended Flight Level Dataset for Tropical Cyclones… <em>NCAR, Boulder, Colorado.[Available online at: http://dx. doi. org/10. 5065/D6WS8R93] Accessed: November 25th, 2017.</em>, 2015.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="wang2015" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[W+15]</td><td>Junhong Wang and others. A long-term, high-quality, high-vertical-resolution GPS dropsonde dataset for hurricane and other studies. <em>Bulletin of the American Meteorological Society</em>, 2015. doi:10.1175/BAMS-D-13-00203.1.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="willoughby" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[WC82]</a></td><td>Hugh&nbsp;E. Willoughby and Marcy&nbsp;B. Chelmow. Objective determination of hurricane tracks from aircraft observations. <em>Monthly Weather Review</em>, 110(9):1298–1305, 1982. URL: <a class="reference external" href="https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2">https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2">arXiv:https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2">doi:10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2</a>.</td></tr>
+</tbody>
+</table>
+</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="process.html" class="btn btn-neutral float-right" title="Process Dropsondes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="interface.html" class="btn btn-neutral" title="The Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Garcia-Franco J.L..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

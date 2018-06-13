@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Process Dropsondes &mdash; PyDropsondes 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="PyDropsondes 1 documentation" href="index.html"/>
+        <link rel="next" title="The Toolbox" href="tools.html"/>
+        <link rel="prev" title="Flightdata" href="flight.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="home.html" class="icon icon-home"> PyDropsondes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">The Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flight.html">Flightdata</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Process Dropsondes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-main-processing-script">The main processing script</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">The Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery of Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="home.html">PyDropsondes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="home.html">Docs</a> &raquo;</li>
+        
+      <li>Process Dropsondes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/process.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="process-dropsondes">
+<h1>Process Dropsondes<a class="headerlink" href="#process-dropsondes" title="Permalink to this headline">¶</a></h1>
+<p>This module will read-in all the droponsdes of a particular storm, select the dropsondes that are in and or near the inner core and finally
+write all processed and cleaned fields into a txt file that can then be used to plot or post-process.</p>
+<p>The dropsonde dataset from <a class="reference internal" href="#wang2015" id="id1">[W+15]</a> is provided with all the necessary filters and quality checks, however,
+several NAN values are still reported, therefore some extra-care must be taken when reading-in and managing these observations.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/dropsonde_1.png"><img alt="_images/dropsonde_1.png" src="_images/dropsonde_1.png" style="width: 21%;" /></a>
+<p class="caption"><span class="caption-text">NOAA’s dropsonde descent, parachute is located around 2-m above the instrument.</span></p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-processing"></span><div class="section" id="the-main-processing-script">
+<h2>The main processing script<a class="headerlink" href="#the-main-processing-script" title="Permalink to this headline">¶</a></h2>
+<p>This script has several processing tasks, enumerated as follows:</p>
+<ol class="arabic simple">
+<li>Read-in all datasets.</li>
+<li>Find all sampling periods.</li>
+<li>Allocate all fields for each sampling periods.</li>
+<li>Write specified fields to output.</li>
+<li>Call Julia script if cylindrical winds are desired.</li>
+</ol>
+<p>To maintain the function-based convention of this computer project. This main script was written as a single function, based from the modules
+<a class="reference internal" href="flight.html#module-flightdata" title="flightdata"><code class="xref py py-meth docutils literal"><span class="pre">flightdata()</span></code></a> and <a class="reference internal" href="tools.html#module-toolbox" title="toolbox"><code class="xref py py-meth docutils literal"><span class="pre">toolbox()</span></code></a>. While long functions might seem to deny the actual purpose of function-based scriptting, the use of a main
+menu or <code class="xref py py-meth docutils literal"><span class="pre">interface()</span></code> required the use and conection of several functions. For this reason, this and the rest of modules are written based on a single function.</p>
+</div>
+<dl class="function">
+<dt id="processing.read_process_write">
+<code class="descclassname">processing.</code><code class="descname">read_process_write</code><span class="sig-paren">(</span><em>filelist</em>, <em>track</em>, <em>storm</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/processing.html#read_process_write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#processing.read_process_write" title="Permalink to this definition">¶</a></dt>
+<dd><p>** Name of function says all. **</p>
+<p>This function can be divided in three main sections:</p>
+<ol class="arabic simple">
+<li>Read-in two main objects, the track information and each dropsonde text file.</li>
+<li><dl class="first docutils">
+<dt>Process the dropsonde files.</dt>
+<dd><ol class="first last loweralpha">
+<li>Clean all NAN’s or false hit data.</li>
+<li>Compute storm speed and convert dropsonde measurements to storm relative speed.</li>
+<li>Locate dropsondes in cylindrical coordinate system.</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>Write temporary and permanent files.</li>
+</ol>
+<p>Additionally, this script runs the Julia script and copies each period file to output folder.</p>
+<ul class="simple">
+<li>Input Parameters*</li>
+</ul>
+<dl class="docutils">
+<dt>filelist: <cite>list</cite></dt>
+<dd>Name of storm.</dd>
+<dt>track: <cite>dict</cite></dt>
+<dd>Dictionary with track. Output of <a class="reference internal" href="flight.html#flightdata.trackandspeed" title="flightdata.trackandspeed"><code class="xref py py-meth docutils literal"><span class="pre">flightdata.trackandspeed()</span></code></a>.</dd>
+<dt>storm: <cite>string</cite></dt>
+<dd>Name of storm.</dd>
+</dl>
+<ul class="simple">
+<li>Output *</li>
+</ul>
+<dl class="docutils">
+<dt>outputfile.txt: <cite>file</cite></dt>
+<dd><p class="first">Output files for each sampling period with all relevant quantities.</p>
+<p>The initial format, following the main writing sequence is as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="10%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="7%" />
+<col width="5%" />
+<col width="12%" />
+<col width="10%" />
+<col width="12%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Radius (km)</td>
+<td>Theta (radians)</td>
+<td>U-cartesian (m/s)</td>
+<td>V-cartesian (m/s)</td>
+<td>W-cartesian (m/s)</td>
+<td>Height (m)</td>
+<td>PT (K)</td>
+<td>Equivalent PT (K)</td>
+<td>Pressure (hPa)</td>
+<td>Coriolis (f) (1/s)</td>
+</tr>
+</tbody>
+</table>
+<p>However, after the Julia script computes azimuthal and radial winds, 4 additional columns are inserted into the file.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="27%" />
+<col width="24%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>U radial (m/s)</td>
+<td>V-azimuthal (m/s)</td>
+<td>X-distance (km)</td>
+<td>Y-distance (km)</td>
+</tr>
+</tbody>
+</table>
+<p class="last">As such, the normal outputfile will be composed of (10+4) 14 columns, in the order specified above.
+Reading examples (see Gallery section)</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This function makes use of several functions from <a class="reference internal" href="tools.html#module-toolbox" title="toolbox"><code class="xref py py-meth docutils literal"><span class="pre">toolbox()</span></code></a>, including: <a class="reference internal" href="tools.html#toolbox.distance" title="toolbox.distance"><code class="xref py py-meth docutils literal"><span class="pre">toolbox.distance()</span></code></a>
+It is also important to mention that this function makes use of the programming language Julia by interacting with the operating system and running the Julia script.</p>
+</div>
+<dl class="docutils">
+<dt><em>Returns</em></dt>
+<dd>temp_axisym.txt:<cite>file</cite> written file with Output fields.</dd>
+</dl>
+</dd></dl>
+
+<p id="bibtex-bibliography-process-0"><table class="docutils citation" frame="void" id="bell2005" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[BM08]</td><td>Michael&nbsp;M. Bell and Michael&nbsp;T. Montgomery. Observed structure, evolution, and potential intensity of category 5 hurricane isabel (2003) from 12 to 14 september. <em>Monthly Weather Review</em>, 136(6):2023–2046, 2008. URL: <a class="reference external" href="https://doi.org/10.1175/2007MWR1858.1">https://doi.org/10.1175/2007MWR1858.1</a>, <a class="reference external" href="https://doi.org/10.1175/2007MWR1858.1">doi:10.1175/2007MWR1858.1</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bogner2000" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[BBF00]</td><td>Paul&nbsp;B Bogner, Gary&nbsp;M Barnes, and James&nbsp;L Franklin. Conditional instability and shear for six hurricanes over the atlantic ocean. <em>Weather and forecasting</em>, 15(2):192–207, 2000.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bolton1980" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Bol80]</td><td>David Bolton. The computation of equivalent potential temperature. <em>Monthly Weather Review</em>, 108(7):1046–1053, 1980. URL: <a class="reference external" href="https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2">https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2">arXiv:https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2">doi:10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="emanuel1986" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Ema86]</td><td>Kerry Emanuel. An air-sea interaction theory for tropical cyclones. Part I: Steady-state maintenance. <em>Journal of the Atmospheric Sciences</em>, 1986. doi:10.1175/1520-0469(1986)043&lt;0585:AASITF&gt;2.0.CO;2.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="molinari2010" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[MV10]</td><td>John Molinari and David Vollaro. Distribution of helicity, cape, and shear in tropical cyclones. <em>Journal of the Atmospheric Sciences</em>, 67(1):274–284, 2010.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="montgomery2009" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[M+09]</td><td>Michael&nbsp;T Montgomery and others. Do tropical cyclones intensify by WISHE? <em>Quarterly Journal of the Royal Meteorological Society</em>, 2009. doi:10.1002/qj.459.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="montearl" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[M+14]</td><td>Michael&nbsp;T Montgomery and others. An analysis of the observed low-level structure of rapidly intensifying and mature hurricane earl (2010). <em>Quarterly Journal of the Royal Meteorological Society</em>, 2014. doi:10.1002/qj.2283.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="schwendike" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[SK08]</td><td>Juliane Schwendike and Jeffrey&nbsp;D Kepert. The boundary layer winds in Hurricanes Danielle (1998) and Isabel (2003). <em>Monthly Weather Review</em>, 2008. doi:10.1175/2007MWR2296.1.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="vigh2015flight" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[V+15]</td><td>JL&nbsp;Vigh and others. FLIGHT+: The Extended Flight Level Dataset for Tropical Cyclones… <em>NCAR, Boulder, Colorado.[Available online at: http://dx. doi. org/10. 5065/D6WS8R93] Accessed: November 25th, 2017.</em>, 2015.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="wang2015" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[W+15]</a></td><td>Junhong Wang and others. A long-term, high-quality, high-vertical-resolution GPS dropsonde dataset for hurricane and other studies. <em>Bulletin of the American Meteorological Society</em>, 2015. doi:10.1175/BAMS-D-13-00203.1.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="willoughby" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[WC82]</td><td>Hugh&nbsp;E. Willoughby and Marcy&nbsp;B. Chelmow. Objective determination of hurricane tracks from aircraft observations. <em>Monthly Weather Review</em>, 110(9):1298–1305, 1982. URL: <a class="reference external" href="https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2">https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2">arXiv:https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2">doi:10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2</a>.</td></tr>
+</tbody>
+</table>
+</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tools.html" class="btn btn-neutral float-right" title="The Toolbox" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="flight.html" class="btn btn-neutral" title="Flightdata" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Garcia-Franco J.L..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

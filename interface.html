@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Interface &mdash; PyDropsondes 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="PyDropsondes 1 documentation" href="index.html"/>
+        <link rel="next" title="Flightdata" href="flight.html"/>
+        <link rel="prev" title="User guide" href="userguide.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="home.html" class="icon icon-home"> PyDropsondes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flight.html">Flightdata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process.html">Process Dropsondes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">The Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery of Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="home.html">PyDropsondes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="home.html">Docs</a> &raquo;</li>
+        
+      <li>The Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/interface.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-interface">
+<h1>The Interface<a class="headerlink" href="#the-interface" title="Permalink to this headline">¶</a></h1>
+<p>Python scripts can interact with a user in a variety of ways, either through a proper graphic interface,
+the use of buttons in the mouse to direct and signal processing and through simpler, less sophisticated,
+user-script communication.</p>
+<p>For this project, the latter case was chosen for the main reason that the purpose of
+the visualization tool is mainly to produce output relevant for TC studies while less focus is placed
+on how the visualization takes place.</p>
+<p>Details.</p>
+<ol class="arabic simple">
+<li>As most connected-scripts, is written in Python 3.5 to be run in a Linux-GNU terminal.</li>
+<li>Interaction with the user through simple questions where options are offered in advance.</li>
+</ol>
+<p>3. Error control: the interface recognizes wrong choices by the user, as well as possibly misleading or
+impossible calculations.</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/interface.png" src="_images/interface.png" />
+<p class="caption"><span class="caption-text">Screenshot of interface greeting message.</span></p>
+</div>
+<p>Above, the interface greeting message is shown. Shortly after this, the user is asked to enter storm year and name.</p>
+<p>The interface will then make use of <span class="xref std std-ref">flightdata</span> to obtain track information that is systematically used by all scripts.
+Subsequently, the interface will ask the user to select the plots or variables they are interested in.</p>
+<p>An example on how to fill-in the requests by the python code is presented below:</p>
+<div class="figure align-center" id="id2">
+<img alt="_images/filled-interface.png" src="_images/filled-interface.png" />
+<p class="caption"><span class="caption-text">Screenshot of a selection of the storm Dolly for the year 2008.</span></p>
+</div>
+<p>Notice how the name and year of the storm must be written without spaces.</p>
+<span class="target" id="module-main_interface"></span><span class="target" id="module-main_interface"></span></div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="flight.html" class="btn btn-neutral float-right" title="Flightdata" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="userguide.html" class="btn btn-neutral" title="User guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Garcia-Franco J.L..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

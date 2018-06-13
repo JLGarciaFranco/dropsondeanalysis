@@ -1,0 +1,1025 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Toolbox &mdash; PyDropsondes 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="PyDropsondes 1 documentation" href="index.html"/>
+        <link rel="next" title="Gallery of Examples" href="gallery.html"/>
+        <link rel="prev" title="Process Dropsondes" href="process.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="home.html" class="icon icon-home"> PyDropsondes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">The Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flight.html">Flightdata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process.html">Process Dropsondes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Toolbox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#frequently-used-functions">Frequently used functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#elementary-tools-for-the-dot">Elementary tools for the DOT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cartesian-to-cylindrical-system-change">Cartesian to Cylindrical system change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kinematic-and-thermodynamic-metrics">Kinematic and Thermodynamic Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cape-related-metrics">CAPE related metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-functions">Other functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery of Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="home.html">PyDropsondes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="home.html">Docs</a> &raquo;</li>
+        
+      <li>The Toolbox</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tools.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-toolbox">
+<h1>The Toolbox<a class="headerlink" href="#the-toolbox" title="Permalink to this headline">¶</a></h1>
+<p>The toolbox is the python-module where all recursive, repeated or long functions are
+stored. It is quite the miscellaneous code wrapper and, as such, it includes a wide range of functions
+for multiple purposes.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="frequently-used-functions">
+<h2>Frequently used functions<a class="headerlink" href="#frequently-used-functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#toolbox.distance" title="toolbox.distance"><code class="xref py py-obj docutils literal"><span class="pre">toolbox.distance</span></code></a>(lat1,&nbsp;lon1,&nbsp;lat2,&nbsp;lon2)</td>
+<td>Estimate the distance in kilometers between two points.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#toolbox.cart_to_cylindr" title="toolbox.cart_to_cylindr"><code class="xref py py-obj docutils literal"><span class="pre">toolbox.cart_to_cylindr</span></code></a>(lon,&nbsp;lat,&nbsp;track,&nbsp;dates)</td>
+<td><ul class="simple">
+<li>Cartesian to Cylindrical *</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#toolbox.stormu" title="toolbox.stormu"><code class="xref py py-obj docutils literal"><span class="pre">toolbox.stormu</span></code></a>(u,&nbsp;v,&nbsp;date,&nbsp;dicc)</td>
+<td>Calculate the corresponding storm speed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#toolbox.findproperties" title="toolbox.findproperties"><code class="xref py py-obj docutils literal"><span class="pre">toolbox.findproperties</span></code></a>(filename,&nbsp;database)</td>
+<td>Function to read-in and find the properties of a file.</td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="module-toolbox"></span><div class="section" id="elementary-tools-for-the-dot">
+<h3>Elementary tools for the DOT<a class="headerlink" href="#elementary-tools-for-the-dot" title="Permalink to this headline">¶</a></h3>
+<p>The functions found below are completely random and might no be related with one another.</p>
+</div>
+<dl class="function">
+<dt id="toolbox.clean1">
+<code class="descclassname">toolbox.</code><code class="descname">clean1</code><span class="sig-paren">(</span><em>vec</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#clean1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.clean1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean values from arrays that are NANs but written as any of the following:</p>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>9999.0,999.0,99.0,99999.0,-999.,-9999.,-99. *</p>
+<p>This function simply replaces this values for Not a Number (NAN) values that Python can recognize.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>vec <span class="classifier-delimiter">:</span> <span class="classifier"><cite>np.array</cite></span></dt>
+<dd>Array to clean</dd>
+</dl>
+<p><em>Returns</em></p>
+<p>vec :<cite>np.ndarray (type=np.float)</cite></p>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">clean1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">newpressure</span><span class="o">=</span><span class="n">clean1</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.clean2">
+<code class="descclassname">toolbox.</code><code class="descname">clean2</code><span class="sig-paren">(</span><em>vec</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#clean2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.clean2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean values from arrays that are significantly different between measurements.</p>
+<p>This function simply replaces this values for Not a Number (NAN) values that Python can recognize as
+sudden steps in the profile.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>vec <span class="classifier-delimiter">:</span> <span class="classifier"><cite>np.array</cite></span></dt>
+<dd>Array to clean</dd>
+</dl>
+<p><em>Returns</em></p>
+<p>vec :<cite>np.ndarray (type=np.float)</cite></p>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">clean2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">newpressure</span><span class="o">=</span><span class="n">clean2</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.cleanu">
+<code class="descclassname">toolbox.</code><code class="descname">cleanu</code><span class="sig-paren">(</span><em>vec</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#cleanu"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.cleanu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean values from wind speed arrays that are significantly different from previous time-steps.</p>
+<p>This function simply replaces with Not a Number (NAN) values that are abnormally different than the mean
+distribution of the vector. This avoids extreme values in the vector.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>vec <span class="classifier-delimiter">:</span> <span class="classifier"><cite>np.array</cite></span></dt>
+<dd>Array to clean</dd>
+</dl>
+<p><em>Returns</em></p>
+<p>vec :<cite>np.ndarray (type=np.float)</cite></p>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">clean1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">newpressure</span><span class="o">=</span><span class="n">cleanu</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.timeconversion">
+<code class="descclassname">toolbox.</code><code class="descname">timeconversion</code><span class="sig-paren">(</span><em>hhmmss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#timeconversion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.timeconversion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that converts a time string to extract hours minutes and seconds from a string.
+Specific for AVAPS dropsondes.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>hhmmss: <cite>string</cite></dt>
+<dd>String containing hours (hh), minutes (mm) and seconds (ss)</dd>
+<dt><strong>Properties</strong></dt>
+<dd><ol class="first last arabic simple">
+<li>Date/Time of sounding.</li>
+<li>Location of initial sounding.</li>
+<li>Name of sounding.</li>
+</ol>
+</dd>
+</dl>
+<p><strong>Returns</strong></p>
+<p>hours:<cite>int</cite>
+seconds:<cite>int</cite>
+minutes:<cite>int</cite></p>
+<p>The rationale behind this script is that most scripts work with dates and times oriented to datetime objects.
+In this case, this particular string poses difficulties to process and as such, we extract the integers of the time.</p>
+<p><em>See also</em></p>
+<p><a class="reference internal" href="#toolbox.findproperties" title="toolbox.findproperties"><code class="xref py py-meth docutils literal"><span class="pre">findproperties()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.getsamplingperiods">
+<code class="descclassname">toolbox.</code><code class="descname">getsamplingperiods</code><span class="sig-paren">(</span><em>flist</em>, <em>tspan</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#getsamplingperiods"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.getsamplingperiods" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Sampling Periods</em></p>
+<p><strong>Parameters</strong></p>
+<dl class="docutils">
+<dt>flist: <cite>list</cite></dt>
+<dd>List of path/filename objects with all times where a dropsonde was measured.</dd>
+<dt>tspan <span class="classifier-delimiter">:</span> <span class="classifier"><cite>float</cite></span></dt>
+<dd>Time threshold. Maximum time allowed of difference between dropsonde measurements in one period.</dd>
+</dl>
+<p>This function gets the sampling periods of a storm.
+A sampling period is a continous period of dropsonde measurements that provides un-interrupted measurements
+with a maximum threshold (tspan) specified between measurements.
+For instance,</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">getsamplingperiods</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="mf">3.</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will allow 3 hours as the maximum time between measurements to define a sampling period. If, there are more than 3 hours
+between a sequence of measurements and the next, the two sequences will account for two different-sets of measurements, i.e., two different sampling periods.</p>
+<p><em>Returns</em></p>
+<p>sampleperiods:<cite>dictionary</cite></p>
+<p>See also <a class="reference external" href="https://docs.python.org/2/tutorial/datastructures.html">dictionary</a> syntax.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.findproperties">
+<code class="descclassname">toolbox.</code><code class="descname">findproperties</code><span class="sig-paren">(</span><em>filename</em>, <em>database</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#findproperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.findproperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to read-in and find the properties of a file.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>filename: <cite>string</cite></dt>
+<dd>Name of file (full path).</dd>
+<dt>database <span class="classifier-delimiter">:</span> <span class="classifier"><cite>dictionary</cite></span></dt>
+<dd>The temperature in Kelvin.</dd>
+<dt><strong>Properties</strong></dt>
+<dd><ol class="first last arabic simple">
+<li>Date/Time of sounding.</li>
+<li>Location of initial sounding.</li>
+<li>Name of sounding.</li>
+</ol>
+</dd>
+</dl>
+<p><strong>Returns</strong></p>
+<p>diccionario:<cite>dictionary</cite></p>
+<p>Notice the variable-name in spanish. Given the similarity of the word with the english version and the fact that
+<a class="reference external" href="https://docs.python.org/2/tutorial/datastructures.html">dictionary</a> is a reserved word in python.</p>
+<p><em>See also</em></p>
+<p><a class="reference internal" href="#toolbox.getrack" title="toolbox.getrack"><code class="xref py py-meth docutils literal"><span class="pre">getrack()</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="cartesian-to-cylindrical-system-change">
+<h2>Cartesian to Cylindrical system change<a class="headerlink" href="#cartesian-to-cylindrical-system-change" title="Permalink to this headline">¶</a></h2>
+<p>Tropical Cyclones are better represented in a cylindrical system, where the distance to the center and the azimuth angle
+describe the system.
+The following set of functions are related to his tricky process and could be considered a keystone of this Computer Project.</p>
+<dl class="function">
+<dt id="toolbox.cart_to_cylindr">
+<code class="descclassname">toolbox.</code><code class="descname">cart_to_cylindr</code><span class="sig-paren">(</span><em>lon</em>, <em>lat</em>, <em>track</em>, <em>dates</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#cart_to_cylindr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.cart_to_cylindr" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>Cartesian to Cylindrical *</li>
+</ul>
+<p>Convert coordinates from a dropsonde observation in cartesian coordinates <span class="math">\((x,y)\)</span> to a cylindrical system <span class="math">\((r,\theta)\)</span>.</p>
+<p>This function is part of the main part of most scripts since Tropical Cyclones are usually depicted in cylindrical systems, not in cartesian.
+As such, extreme care was taken into this function and reader is advised to look carefully at all steps of this function.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>lon <span class="classifier-delimiter">:</span> <span class="classifier"><cite>float</cite></span></dt>
+<dd>Longitude of observation point in degrees.</dd>
+<dt>lat <span class="classifier-delimiter">:</span> <span class="classifier"><cite>float</cite></span></dt>
+<dd>Latitude of observation point in degrees.</dd>
+<dt>track: <cite>dictionary</cite></dt>
+<dd>Track dictionary from <a class="reference internal" href="flight.html#flightdata.trackandspeed" title="flightdata.trackandspeed"><code class="xref py py-meth docutils literal"><span class="pre">flightdata.trackandspeed()</span></code></a>.</dd>
+<dt>dates: <cite>datetime</cite></dt>
+<dd>Date and time of observation.</dd>
+</dl>
+<p><em>Returns</em></p>
+<dl class="docutils">
+<dt><cite>tuple</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(r,theta)</span></dt>
+<dd>Return of two floats as a tuple, the final radius (r) and azimuth (theta).</dd>
+</dl>
+<p>While this script could be self-contained it mostly depends on two other functions <a class="reference internal" href="#toolbox.distance" title="toolbox.distance"><code class="xref py py-meth docutils literal"><span class="pre">distance()</span></code></a> and
+<a class="reference internal" href="#toolbox.getcenter" title="toolbox.getcenter"><code class="xref py py-meth docutils literal"><span class="pre">getcenter()</span></code></a>. The latter retrieves the closest storm centre and the former computes distances between two lat-lon points.</p>
+<p>While <a class="reference internal" href="#toolbox.distance" title="toolbox.distance"><code class="xref py py-meth docutils literal"><span class="pre">distance()</span></code></a> documents how a distance between two points on a sphere is computed <span class="math">\((r)`\)</span>, the other part of a cylindrical
+coordinate system is the azimuth <span class="math">\(\theta\)</span>.</p>
+<p>That computation obeys a different mathematical approach. Specifically, to estimate the <a class="reference external" href="https://en.wikipedia.org/wiki/Azimuth">azimuth</a> between two points on the surface of a sphere
+nautical term of <em>bearing</em> is used.</p>
+<p>The bearing or azimuth is given by:</p>
+<div class="math">
+\[\theta=\frac{\pi}{2}+arctan\bigg(sin(\Delta \lambda)cos(\varphi_1),cos(\varphi_1)sin(\varphi_2)-sin(\varphi_1)cos(\varphi_2)*cos(\Delta \lambda)\bigg)\]</div>
+<p>determined by:</p>
+<ul class="simple">
+<li><span class="math">\(theta\)</span>: Azimuth/bearing in a cylindrical system.</li>
+<li><span class="math">\(\Delta \varphi=\varphi _2-\varphi _1\)</span> Latitude difference between centre and observation.</li>
+<li><span class="math">\(\varphi_1\)</span> Latitude of centre [radians].</li>
+<li><span class="math">\(\varphi_2\)</span> Latitude of observation [radians].</li>
+<li><span class="math">\(\Delta \lambda=\lambda _2-\lambda _1\)</span> Longitude difference between centre and observation.</li>
+</ul>
+<p>Notice how the formula has a correcting factor which accounts for the fact that a bearing usually is measured as the angle between the north (remember this was initially computed for sailing) and the location of the destination.
+For this reason, we add <span class="math">\(=\frac{\pi}{2}\)</span> to establish a proper cylindrical system where the 0degree is aligned with the <span class="math">\(x&gt;0\)</span> and <span class="math">\(y=0\)</span> line.</p>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">getcenter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">centrelat</span><span class="p">,</span><span class="n">centrelon</span><span class="o">=</span><span class="n">getcenter</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2003</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">trackdict</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For further information, good revisions on the derviation of the <a class="reference external" href="https://www.math.ksu.edu/~dbski/writings/haversine.pdf">Havesine formula</a> and the <a class="reference external" href="https://www.movable-type.co.uk/scripts/latlong.html">bearing</a> are attached.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.distance">
+<code class="descclassname">toolbox.</code><code class="descname">distance</code><span class="sig-paren">(</span><em>lat1</em>, <em>lon1</em>, <em>lat2</em>, <em>lon2</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the distance in kilometers between two points.</p>
+<p>Given the latitude and longitude of two points in Earth (x1,y1), (x2,y2)
+This function computes the distance between those two points using formulaes of spheric geometry.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>lat1 <span class="classifier-delimiter">:</span> <span class="classifier"><cite>float</cite></span></dt>
+<dd>Latitude of starting point [radians]</dd>
+<dt>lon1 <span class="classifier-delimiter">:</span> <span class="classifier"><cite>float</cite></span></dt>
+<dd>Longitude of starting point [radians]</dd>
+<dt>lat2 <span class="classifier-delimiter">:</span> <span class="classifier"><cite>float</cite></span></dt>
+<dd>Latitude of final point [radians]</dd>
+<dt>lon2 <span class="classifier-delimiter">:</span> <span class="classifier"><cite>float</cite></span></dt>
+<dd>Longitude of final point [radians]</dd>
+</dl>
+<p><em>Returns</em></p>
+<dl class="docutils">
+<dt>r <span class="classifier-delimiter">:</span> <span class="classifier"><cite>float</cite></span></dt>
+<dd>The geometric distance between two points on the surface of a sphere</dd>
+</dl>
+<p>The radius <em>r</em> is given using, first, the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Haversine_formula">Haversine formula</a> and it was written to match the script from <a class="reference external" href="https://rosettacode.org/wiki/Haversine_formula#Python">Rosetta</a> to great extent.</p>
+<div class="math">
+\[a = sin^2\bigg(\frac{\Delta \varphi}{2}\bigg) +cos \varphi _1 \cdot cos \varphi _2 \cdot sin^2\bigg(\frac{\Delta \lambda}{2}\bigg)\]</div>
+<p>determined by:</p>
+<ul class="simple">
+<li><span class="math">\(a\)</span> Great-circle distance between to points.</li>
+<li><span class="math">\(\Delta \varphi=\varphi _2-\varphi _1\)</span> Latitude difference between two points.</li>
+<li><span class="math">\(\varphi_1\)</span> Latitude of starting point [radians].</li>
+<li><span class="math">\(\varphi_2\)</span> Latitude of final point [radians].</li>
+<li><span class="math">\(\Delta \lambda=\lambda _2-\lambda _1\)</span> Longitude difference between two points.</li>
+</ul>
+<p>To convert the great circle distance given by the Haversine formula in a sphere of radius <span class="math">\(R\)</span> (radius of the Earth) to a distance <span class="math">\(r\)</span>:</p>
+<div class="math">
+\[r=R\cdot 2 arctan\bigg(\frac{\sqrt{a}}{\sqrt{1-a}}\bigg)\]</div>
+<p>Using the previous mathematical treatment, you could use this functions as desribed below:</p>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">distance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">radians</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">),</span><span class="n">radians</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span><span class="n">radians</span><span class="p">(</span><span class="mi">59</span><span class="p">),</span><span class="n">radians</span><span class="p">(</span><span class="mi">82</span><span class="p">)))</span>
+<span class="go">1563.051273807386</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.plotdrift">
+<code class="descclassname">toolbox.</code><code class="descname">plotdrift</code><span class="sig-paren">(</span><em>filelist</em>, <em>track</em>, <em>storm</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#plotdrift"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.plotdrift" title="Permalink to this definition">¶</a></dt>
+<dd><p><span class="xref std std-ref">sphx_glr_auto_examples_plot_drift.py</span></p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>filelist: <cite>list</cite></dt>
+<dd>List of files to be used.</dd>
+<dt>track: <cite>dictionary</cite></dt>
+<dd>Dictionary of track information. See <a class="reference internal" href="#toolbox.getrack" title="toolbox.getrack"><code class="xref py py-meth docutils literal"><span class="pre">getrack()</span></code></a></dd>
+<dt>storm: <cite>string</cite></dt>
+<dd>Storm name.</dd>
+<dt><em>Returns</em></dt>
+<dd>Figure Object</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.getcenter">
+<code class="descclassname">toolbox.</code><code class="descname">getcenter</code><span class="sig-paren">(</span><em>date</em>, <em>track</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#getcenter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.getcenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain longitude and latitude of storm centre.</p>
+<p>This function is part of a basic part of most routines as it reads-in a date and the track-dictionary and returns the best approximation
+to the stomr’s centre in degrees.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>date <span class="classifier-delimiter">:</span> <span class="classifier"><cite>datetime</cite></span></dt>
+<dd>Date to seek storm centre.</dd>
+<dt>track <span class="classifier-delimiter">:</span> <span class="classifier"><cite>dictionary</cite></span></dt>
+<dd>Typical dictionary obtained from <a class="reference internal" href="flight.html#flightdata.trackandspeed" title="flightdata.trackandspeed"><code class="xref py py-meth docutils literal"><span class="pre">flightdata.trackandspeed()</span></code></a></dd>
+</dl>
+<p><em>Returns</em></p>
+<dl class="docutils">
+<dt><cite>tuple</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(latf,lonf)</span></dt>
+<dd>Return of two floats as a tuple, the final latitude (latf) and longitude (lonf).</dd>
+</dl>
+<p>This script uses two main approaches, first seeking all track data in a 20 min window to obtain an average and,
+if no track values are reported in the window, the closest track value is used.</p>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">getcenter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">centrelat</span><span class="p">,</span><span class="n">centrelon</span><span class="o">=</span><span class="n">getcenter</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2003</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">trackdict</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Notice this script makes use of conventional and particular syntax. For instance, timedeltas are conventionally named (td) in datetime modules.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="kinematic-and-thermodynamic-metrics">
+<h2>Kinematic and Thermodynamic Metrics<a class="headerlink" href="#kinematic-and-thermodynamic-metrics" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="toolbox.getgradwind">
+<code class="descclassname">toolbox.</code><code class="descname">getgradwind</code><span class="sig-paren">(</span><em>presgrad</em>, <em>radius</em>, <em>coriolis</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#getgradwind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.getgradwind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the gradient wind in a particular point.</p>
+<p>Gradient wind balance is given by <a class="reference internal" href="#emanuel1986" id="id4">[Ema86]</a><a class="reference internal" href="#bell2005" id="id5">[BM08]</a></p>
+<div class="math">
+\[\frac{1}{\rho_0}\frac{\partial p}{\partial r}=\frac{V_g^2}{r}+fV_g\]</div>
+<p>where <span class="math">\(\rho_0\)</span> is a constant density, <span class="math">\(\frac{\partial p}{\partial r}\)</span> is the
+radial gradient of the pressure field, <span class="math">\(V_g\)</span> is the gradient wind and <span class="math">\(f\)</span> is the coriolis parameter.</p>
+<p>which is a polynomial of degree <em>n=2</em> and needs to be solved using
+<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.roots.html">np.roots</a>.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>presgrad <span class="classifier-delimiter">:</span> <span class="classifier"><cite>np.float (array)</cite></span></dt>
+<dd>Radial gradient of pressure. See also <span class="xref std std-ref">dp_dr</span></dd>
+<dt>radius <span class="classifier-delimiter">:</span> <span class="classifier"><cite>np.float (array)</cite></span></dt>
+<dd>Radius distance to the center of the storm in [km].</dd>
+</dl>
+<p><em>Returns</em></p>
+<dl class="docutils">
+<dt><cite>np.ndarray (type=np.float)</cite></dt>
+<dd>Gradient wind vector</dd>
+</dl>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">dp_dr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dpdr</span><span class="o">=</span><span class="n">getgradwind</span><span class="p">(</span><span class="n">dpdr</span><span class="p">,</span><span class="n">r0</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">))))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.equivalent_potential_temperature">
+<code class="descclassname">toolbox.</code><code class="descname">equivalent_potential_temperature</code><span class="sig-paren">(</span><em>pressure</em>, <em>temperature</em>, <em>dewpoint</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#equivalent_potential_temperature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.equivalent_potential_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate equivalent potential temperature.</p>
+<p>This calculation must be given an air parcel’s pressure, temperature, and dewpoint.
+The implementation uses the formula outlined in <a class="reference internal" href="#bolton1980" id="id6">[Bol80]</a>:</p>
+<p>First, the LCL temperature is calculated:</p>
+<div class="math">
+\[T_{L}=\frac{1}{\frac{1}{T_{D}-56}+\frac{ln(T_{K}/T_{D})}{800}}+56\]</div>
+<p>Which is then used to calculate the potential temperature at the LCL:</p>
+<div class="math">
+\[\theta_{DL}=T_{K}\left(\frac{1000}{p-e}\right)^k
+\left(\frac{T_{K}}{T_{L}}\right)^{.28r}\]</div>
+<p>Both of these are used to calculate the final equivalent potential temperature:</p>
+<div class="math">
+\[\theta_{E}=\theta_{DL}\exp\left[\left(\frac{3036.}{T_{L}}
+-1.78\right)*r(1+.448r)\right]\]</div>
+<p><strong>Parameters</strong></p>
+<dl class="docutils">
+<dt>pressure: <cite>pint.Quantity</cite></dt>
+<dd>Total atmospheric pressure</dd>
+<dt>temperature: <cite>pint.Quantity</cite></dt>
+<dd>Temperature of parcel</dd>
+<dt>dewpoint: <cite>pint.Quantity</cite></dt>
+<dd>Dewpoint of parcel</dd>
+</dl>
+<p><strong>Returns</strong></p>
+<dl class="docutils">
+<dt><cite>pint.Quantity</cite></dt>
+<dd>The equivalent potential temperature of the parcel</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p><a class="reference internal" href="#bolton1980" id="id7">[Bol80]</a> formula for Theta-e is used, since it is the most accurate non-iterative formulation
+available.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.dp_dr">
+<code class="descclassname">toolbox.</code><code class="descname">dp_dr</code><span class="sig-paren">(</span><em>pressure</em>, <em>radius</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#dp_dr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.dp_dr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the pressure gradient on the radius coordinate.</p>
+<p>This function estimates the gradient of the function <span class="math">\(p\)</span> along the radial coordinate, <em>i.e.</em>:</p>
+<div class="math">
+\[\frac{\partial p}{\partial r}\sim \frac{\Delta p}{\Delta r}=\frac{P_2-P_1}{r_2-r_1}\]</div>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>pressure <span class="classifier-delimiter">:</span> <span class="classifier"><cite>np.ndarray (type=np.float)</cite></span></dt>
+<dd>The total interpolated atmospheric pressure in milibars.</dd>
+<dt>radius <span class="classifier-delimiter">:</span> <span class="classifier"><cite>np.ndarray (type=np.float)</cite></span></dt>
+<dd>Radius distance to the center of the storm in [km].</dd>
+</dl>
+<p><em>Returns</em></p>
+<p><cite>np.ndarray (type=np.float)</cite></p>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">dp_dr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dpdr</span><span class="o">=</span><span class="n">dp_dr</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span><span class="n">r</span><span class="p">)))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.convergence_vorticity">
+<code class="descclassname">toolbox.</code><code class="descname">convergence_vorticity</code><span class="sig-paren">(</span><em>u</em>, <em>v</em>, <em>xvec</em>, <em>yvec</em>, <em>dim_order='xy'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#convergence_vorticity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.convergence_vorticity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the horizontal divergence and vertical vorticity of the horizontal wind.</p>
+<p>This function was originally a Metpy function but it has been modified for PyDropsondes.
+In this sense, convergence and vorticity are computed using <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.gradient.html">numpy function gradient</a>.
+This gives the first derivative on the two spatial components of a given field, just as both convergence and divergence are defined.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>u <span class="classifier-delimiter">:</span> <span class="classifier">(M, N) ndarray</span></dt>
+<dd>x component of the wind</dd>
+<dt>v <span class="classifier-delimiter">:</span> <span class="classifier">(M, N) ndarray</span></dt>
+<dd>y component of the wind</dd>
+<dt>xvec <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>The grid spacing or vector in the x-direction</dd>
+<dt>yvec <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>The grid spacing or vector in the y-direction</dd>
+</dl>
+<p>divergence, vorticity : tuple of (M, N) ndarrays
+The horizontal divergence and vertical vorticity, respectively.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.stormu">
+<code class="descclassname">toolbox.</code><code class="descname">stormu</code><span class="sig-paren">(</span><em>u</em>, <em>v</em>, <em>date</em>, <em>dicc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#stormu"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.stormu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the corresponding storm speed.</p>
+<p>This function reads-in the storm speed at a particular datetime.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>u <span class="classifier-delimiter">:</span> <span class="classifier"><cite>np.float</cite></span></dt>
+<dd>X-component of wind speed.</dd>
+<dt>v <span class="classifier-delimiter">:</span> <span class="classifier"><cite>np.float</cite></span></dt>
+<dd>Y-component of wind speed</dd>
+<dt>date <span class="classifier-delimiter">:</span> <span class="classifier"><cite>datetime.datetime</cite></span></dt>
+<dd>Date where speed is needed.</dd>
+<dt>dicc <span class="classifier-delimiter">:</span> <span class="classifier"><cite>dictionary</cite></span></dt>
+<dd>Track dictionary with, track, speed and corresponding datetimes.</dd>
+</dl>
+<p><em>Returns</em></p>
+<dl class="docutils">
+<dt><cite>tuple</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(newu,newv)</span></dt>
+<dd>Either returns new storm-relative x and y-component wind speeds or it can return</dd>
+</dl>
+<p>Formula:</p>
+<div class="math">
+\[u_{sr}=u_{obs}-u_{storm}\]</div>
+<p>where <span class="math">\(u_{sr}\)</span> is the storm relative winds, <span class="math">\(u_{obs}\)</span> is the observed wind and <span class="math">\(u_{storm}\)</span> is the estimated
+storm wind speed.</p>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">stormu</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">newu</span><span class="p">,</span><span class="n">newv</span><span class="o">=</span><span class="n">stormu</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">date</span><span class="p">,</span><span class="n">trackdicc</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.potential_temperature">
+<code class="descclassname">toolbox.</code><code class="descname">potential_temperature</code><span class="sig-paren">(</span><em>pressure</em>, <em>temperature</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#potential_temperature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.potential_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the potential temperature.</p>
+<p>This function originated from the Metpy Module. It was modified by JLGF for the dropsondes.
+Uses the Poisson equation to calculation the potential temperature
+given <cite>pressure</cite> and <cite>temperature</cite>.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>pressure <span class="classifier-delimiter">:</span> <span class="classifier"><cite>pint.Quantity</cite></span></dt>
+<dd>The total atmospheric pressure in milibars.</dd>
+<dt>temperature <span class="classifier-delimiter">:</span> <span class="classifier"><cite>pint.Quantity</cite></span></dt>
+<dd>The temperature in Kelvin.</dd>
+</dl>
+<p><em>Returns</em></p>
+<dl class="docutils">
+<dt><cite>pint.Quantity</cite></dt>
+<dd>The potential temperature corresponding to the temperature and
+pressure.</dd>
+</dl>
+<p>Formula:</p>
+<div class="math">
+\[\Theta = T (P_0 / P)^\kappa\]</div>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">metpy.units</span> <span class="k">import</span> <span class="n">units</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">potential_temperature</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">potential_temperature</span><span class="p">(</span><span class="mf">800.</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">mbar</span><span class="p">,</span> <span class="mf">273.</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">kelvin</span><span class="p">))</span>
+<span class="go">&lt;Quantity(290.96653180346203, &#39;kelvin&#39;)&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="cape-related-metrics">
+<h2>CAPE related metrics<a class="headerlink" href="#cape-related-metrics" title="Permalink to this headline">¶</a></h2>
+<p>CAPE is a measure of severe weather events and is useful for weather forecasts of rain and winds.
+However, in TCs it has found to be a less useful metric since their distribution and magnitude is not related to storm’s intensity or intensity change.</p>
+<p>Functions below were originally from Metpy module and have been modified for this project’s needs to compute Convective Available Potential Energy
+from the dropsoundings.</p>
+<dl class="function">
+<dt id="toolbox._find_append_zero_crossings">
+<code class="descclassname">toolbox.</code><code class="descname">_find_append_zero_crossings</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#_find_append_zero_crossings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox._find_append_zero_crossings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and interpolate zero crossings.</p>
+<p>Estimate the zero crossings of an x,y series and add estimated crossings to series,
+returning a sorted array with no duplicate values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<cite>pint.Quantity</cite>) – x values of data</li>
+<li><strong>y</strong> (<cite>pint.Quantity</cite>) – y values of data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>x</strong> (<cite>pint.Quantity</cite>) – x values of data</li>
+<li><strong>y</strong> (<cite>pint.Quantity</cite>) – y values of data</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.parcel_profile">
+<code class="descclassname">toolbox.</code><code class="descname">parcel_profile</code><span class="sig-paren">(</span><em>pressure</em>, <em>temperature</em>, <em>dewpt</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#parcel_profile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.parcel_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the profile a parcel takes through the atmosphere.</p>
+<p>The parcel starts at <cite>temperature</cite>, and <cite>dewpt</cite>, lifted up
+dry adiabatically to the LCL, and then moist adiabatically from there.
+<cite>pressure</cite> specifies the pressure levels for the profile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>pressure</strong> (<cite>pint.Quantity</cite>) – The atmospheric pressure level(s) of interest. The first entry should be the starting
+point pressure.</li>
+<li><strong>temperature</strong> (<cite>pint.Quantity</cite>) – The starting temperature</li>
+<li><strong>dewpt</strong> (<cite>pint.Quantity</cite>) – The starting dew point</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><cite>pint.Quantity</cite> – The parcel temperatures at the specified pressure levels.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><code class="xref py py-func docutils literal"><span class="pre">lcl()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">moist_lapse()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">dry_lapse()</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.cape_cin">
+<code class="descclassname">toolbox.</code><code class="descname">cape_cin</code><span class="sig-paren">(</span><em>pressure</em>, <em>temperature</em>, <em>dewpt</em>, <em>parcel_profile</em>, <em>dz</em>, <em>temp</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#cape_cin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.cape_cin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate CAPE and CIN.
+This script is originally from Metpy module but it was not avaialble in Python 3.6.3 Anaconda version. JLGF.</p>
+<p>Calculate the convective available potential energy (CAPE) and convective inhibition (CIN)
+of a given upper air profile and parcel path. CIN is integrated between the surface and
+LFC, CAPE is integrated between the LFC and EL (or top of sounding). Intersection points of
+the measured temperature profile and parcel profile are linearly interpolated.</p>
+<p>Especifically this script has been adapted from <a class="reference internal" href="#montearl" id="id8">[M+14]</a> and <a class="reference internal" href="#molinari2010" id="id9">[MV10]</a> which use a very particular function for CAPE.
+CAPE is not trivially computed from dropsonde measurements and several cautions are extended:</p>
+<ol class="arabic simple">
+<li>Vertical profiles usually do not reach the equilibrium level (EL) but instead are cut-off at 8-9 km.</li>
+<li>Typical CAPE formula estimates the area of the difference between parcel and environmental profiles, however, this method uses a more robust approach <a class="reference internal" href="#bogner2000" id="id10">[BBF00]</a>.</li>
+<li>Several corrections would need to be in place for this script to be comparable to other studies (see above). It is then a simple approximation and by no means a complete and thorough algorithm.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>pressure</strong> (<cite>pint.Quantity</cite>) – The atmospheric pressure level(s) of interest. The first entry should be the starting
+point pressure.</li>
+<li><strong>temperature</strong> (<cite>pint.Quantity</cite>) – The atmospheric temperature corresponding to pressure.</li>
+<li><strong>dewpt</strong> (<cite>pint.Quantity</cite>) – The atmospheric dew point corresponding to pressure.</li>
+<li><strong>parcel_profile</strong> (<cite>pint.Quantity</cite>) – The temperature profile of the parcel</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><cite>pint.Quantity</cite> – Convective available potential energy (CAPE).</li>
+<li><cite>pint.Quantity</cite> – Convective inhibition (CIN).</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Formula adopted from <a class="reference internal" href="#montearl" id="id11">[M+14]</a></p>
+<div class="math">
+\[\text{CAPE} = \int_{LFC}^{EL} g\frac{(T_{v} - T_{ve})}{\overline{T_{ve}}} dz\]</div>
+<div class="math">
+\[\text{CIN} = \int_{SFC}^{LFC} g\frac{(T_{v} - T_{ve})}{\overline{T_{ve}}} dz\]</div>
+<ul class="simple">
+<li><span class="math">\(CAPE\)</span> Convective available potential energy</li>
+<li><span class="math">\(CIN\)</span> Convective inhibition</li>
+<li><span class="math">\(LFC\)</span> Pressure of the level of free convection</li>
+<li><span class="math">\(EL\)</span> Pressure of the equilibrium level</li>
+<li><span class="math">\(SFC\)</span> Level of the surface or beginning of parcel path</li>
+<li><span class="math">\(g\)</span> Gravitational acceleration</li>
+<li><span class="math">\(T_{v}\)</span> Parcel potential temperature.</li>
+<li><span class="math">\(T_{ve}\)</span> Environmental potential temperature.</li>
+<li><span class="math">\(\overline{T_{ve}}\)</span> Mean environmental potential temperature.</li>
+<li><span class="math">\(dz\)</span> Height array differential.</li>
+</ul>
+<p>See Also</p>
+<p><a class="reference internal" href="#toolbox._find_append_zero_crossings" title="toolbox._find_append_zero_crossings"><code class="xref py py-meth docutils literal"><span class="pre">toolbox._find_append_zero_crossings()</span></code></a>, <a class="reference internal" href="#toolbox.parcel_profile" title="toolbox.parcel_profile"><code class="xref py py-meth docutils literal"><span class="pre">toolbox.parcel_profile()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="toolbox.cleanforcape">
+<code class="descclassname">toolbox.</code><code class="descname">cleanforcape</code><span class="sig-paren">(</span><em>T</em>, <em>p</em>, <em>dwpoint</em>, <em>dz</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#cleanforcape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.cleanforcape" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function was created to clean fields relevant for CAPE calculations from NAN values.
+In simple words, this function makes sure that all four input arguments are returned where ALL arrays have non-nan values at all points.
+This cleaning function will allow further calculations to run smoothly.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>p: <cite>pint.Quantity</cite></dt>
+<dd>The total atmospheric pressure in milibars.</dd>
+<dt>T <span class="classifier-delimiter">:</span> <span class="classifier"><cite>pint.Quantity</cite></span></dt>
+<dd>The temperature in Kelvin.</dd>
+<dt>dwpoint :<cite>np.array</cite></dt>
+<dd>Dewpoint or relative humidity.</dd>
+<dt>dz: <cite>np.array</cite></dt>
+<dd>Height array.</dd>
+</dl>
+<p>To be honest, this functon only nan-checks the lists and selects all indexes where no nans are found across the arrays.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="other-functions">
+<h2>Other functions<a class="headerlink" href="#other-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="toolbox.getrack">
+<code class="descclassname">toolbox.</code><code class="descname">getrack</code><span class="sig-paren">(</span><em>storm</em>, <em>year</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#getrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#toolbox.getrack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain the track of a storm specifying the year since storm names can be repeated. .</p>
+<p>This function obtains and returns all track parameters, location, intensity and relative speed.</p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>storm <span class="classifier-delimiter">:</span> <span class="classifier"><cite>string</cite></span></dt>
+<dd>Name of storm.</dd>
+<dt>year <span class="classifier-delimiter">:</span> <span class="classifier"><cite>string</cite></span></dt>
+<dd>Year of storm.</dd>
+</dl>
+<p><em>Returns</em></p>
+<p>longitudes :<cite>np.ndarray (type=np.float)</cite>
+latitudes:<cite>np.ndarray(type=np.float)</cite>
+windspeeds:<cite>np.ndarray(type=np.float)</cite>
+Intensity_label: <cite>list</cite></p>
+<blockquote>
+<div>List of Intensity Labels, e.g., (H) for Hurricane.</div></blockquote>
+<dl class="docutils">
+<dt>df.index:<cite>pandas.DataFrame.Index</cite></dt>
+<dd>List of dates that correspond to the dates and times of the previous arrays.</dd>
+</dl>
+<p><em>Examples</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">toolbox</span> <span class="k">import</span> <span class="n">getrack</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">track</span><span class="o">=</span><span class="n">getrack</span><span class="p">(</span><span class="s1">&#39;Isabel&#39;</span><span class="p">,</span><span class="s1">&#39;2003&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">toolbox.</code><code class="descname">plotdrift</code><span class="sig-paren">(</span><em>filelist</em>, <em>track</em>, <em>storm</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toolbox.html#plotdrift"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p><span class="xref std std-ref">sphx_glr_auto_examples_plot_drift.py</span></p>
+<p><em>Parameters</em></p>
+<dl class="docutils">
+<dt>filelist: <cite>list</cite></dt>
+<dd>List of files to be used.</dd>
+<dt>track: <cite>dictionary</cite></dt>
+<dd>Dictionary of track information. See <a class="reference internal" href="#toolbox.getrack" title="toolbox.getrack"><code class="xref py py-meth docutils literal"><span class="pre">getrack()</span></code></a></dd>
+<dt>storm: <cite>string</cite></dt>
+<dd>Storm name.</dd>
+<dt><em>Returns</em></dt>
+<dd>Figure Object</dd>
+</dl>
+</dd></dl>
+
+<p id="bibtex-bibliography-tools-0"><table class="docutils citation" frame="void" id="bell2005" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[BM08]</a></td><td>Michael&nbsp;M. Bell and Michael&nbsp;T. Montgomery. Observed structure, evolution, and potential intensity of category 5 hurricane isabel (2003) from 12 to 14 september. <em>Monthly Weather Review</em>, 136(6):2023–2046, 2008. URL: <a class="reference external" href="https://doi.org/10.1175/2007MWR1858.1">https://doi.org/10.1175/2007MWR1858.1</a>, <a class="reference external" href="https://doi.org/10.1175/2007MWR1858.1">doi:10.1175/2007MWR1858.1</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bogner2000" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[BBF00]</a></td><td>Paul&nbsp;B Bogner, Gary&nbsp;M Barnes, and James&nbsp;L Franklin. Conditional instability and shear for six hurricanes over the atlantic ocean. <em>Weather and forecasting</em>, 15(2):192–207, 2000.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bolton1980" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Bol80]</td><td><em>(<a class="fn-backref" href="#id6">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> David Bolton. The computation of equivalent potential temperature. <em>Monthly Weather Review</em>, 108(7):1046–1053, 1980. URL: <a class="reference external" href="https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2">https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2">arXiv:https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2">doi:10.1175/1520-0493(1980)108&lt;1046:TCOEPT&gt;2.0.CO;2</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="emanuel1986" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[Ema86]</a></td><td>Kerry Emanuel. An air-sea interaction theory for tropical cyclones. Part I: Steady-state maintenance. <em>Journal of the Atmospheric Sciences</em>, 1986. doi:10.1175/1520-0469(1986)043&lt;0585:AASITF&gt;2.0.CO;2.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="molinari2010" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[MV10]</a></td><td>John Molinari and David Vollaro. Distribution of helicity, cape, and shear in tropical cyclones. <em>Journal of the Atmospheric Sciences</em>, 67(1):274–284, 2010.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="montgomery2009" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[M+09]</td><td>Michael&nbsp;T Montgomery and others. Do tropical cyclones intensify by WISHE? <em>Quarterly Journal of the Royal Meteorological Society</em>, 2009. doi:10.1002/qj.459.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="montearl" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[M+14]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id11">2</a>)</em> Michael&nbsp;T Montgomery and others. An analysis of the observed low-level structure of rapidly intensifying and mature hurricane earl (2010). <em>Quarterly Journal of the Royal Meteorological Society</em>, 2014. doi:10.1002/qj.2283.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="schwendike" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[SK08]</td><td>Juliane Schwendike and Jeffrey&nbsp;D Kepert. The boundary layer winds in Hurricanes Danielle (1998) and Isabel (2003). <em>Monthly Weather Review</em>, 2008. doi:10.1175/2007MWR2296.1.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="vigh2015flight" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[V+15]</td><td>JL&nbsp;Vigh and others. FLIGHT+: The Extended Flight Level Dataset for Tropical Cyclones… <em>NCAR, Boulder, Colorado.[Available online at: http://dx. doi. org/10. 5065/D6WS8R93] Accessed: November 25th, 2017.</em>, 2015.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="wang2015" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[W+15]</td><td>Junhong Wang and others. A long-term, high-quality, high-vertical-resolution GPS dropsonde dataset for hurricane and other studies. <em>Bulletin of the American Meteorological Society</em>, 2015. doi:10.1175/BAMS-D-13-00203.1.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="willoughby" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[WC82]</td><td>Hugh&nbsp;E. Willoughby and Marcy&nbsp;B. Chelmow. Objective determination of hurricane tracks from aircraft observations. <em>Monthly Weather Review</em>, 110(9):1298–1305, 1982. URL: <a class="reference external" href="https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2">https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2">arXiv:https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2</a>, <a class="reference external" href="https://doi.org/10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2">doi:10.1175/1520-0493(1982)110&lt;1298:ODOHTF&gt;2.0.CO;2</a>.</td></tr>
+</tbody>
+</table>
+</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gallery.html" class="btn btn-neutral float-right" title="Gallery of Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="process.html" class="btn btn-neutral" title="Process Dropsondes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Garcia-Franco J.L..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
