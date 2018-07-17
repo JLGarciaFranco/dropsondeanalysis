@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PyDropsondes &mdash; PyDropsondes 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="PyDropsondes 1 documentation" href="index.html"/>
+        <link rel="next" title="User guide" href="userguide.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> PyDropsondes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">The Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flight.html">Flightdata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process.html">Process Dropsondes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">The Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery of Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">PyDropsondes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>PyDropsondes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/home.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pydropsondes">
+<h1>PyDropsondes<a class="headerlink" href="#pydropsondes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-visualization-toolkit-for-dropsonde-observations-of-tropical-cyclones">
+<h2>A Visualization Toolkit for Dropsonde Observations of Tropical Cyclones<a class="headerlink" href="#a-visualization-toolkit-for-dropsonde-observations-of-tropical-cyclones" title="Permalink to this headline">¶</a></h2>
+<p>by <em>Garcia-Franco J.L.</em></p>
+</div>
+<div class="section" id="welcome-to-the-docs">
+<h2>Welcome to the docs<a class="headerlink" href="#welcome-to-the-docs" title="Permalink to this headline">¶</a></h2>
+<p>PyDropsondes is a Python-based interface that interacts with the user to read, process and create stylish output showing the main thermodynamic
+and dynamic metrics derived from dropsonde measurements.</p>
+<img alt="_images/irma.gif" class="align-center" src="_images/irma.gif" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This is the documentation provided by the <a class="reference external" href="http://www.sphinx-doc.org/en/master/">Sphinx Python</a>. module, extended with the
+<a class="reference external" href="http://sphinx-gallery.readthedocs.io/en/latest/index.html">Sphinx Gallery</a>.
+This page provides a detailed account of the scripts used in the Project by three main tools:</p>
+<blockquote class="last">
+<div><ol class="arabic simple">
+<li>An index (bellow) and diagram (<span class="xref std std-ref">userguide</span>) showing how different scripts, modules and functions interconnect and feed from each other.</li>
+<li>A module by module and function by function in-line documentation of all the code. Refer to index if you get lost or looking to some particular snippet.</li>
+<li>An example gallery (<a class="reference internal" href="gallery.html#gallery"><span class="std std-ref">Gallery of Examples</span></a>), where you can find examples of possible plots using the Dropsonde Dataset.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">The Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flight.html">Flightdata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="flight.html#main-function">Main function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="process.html">Process Dropsondes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="process.html#the-main-processing-script">The main processing script</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">The Toolbox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#frequently-used-functions">Frequently used functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#elementary-tools-for-the-dot">Elementary tools for the DOT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#cartesian-to-cylindrical-system-change">Cartesian to Cylindrical system change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#kinematic-and-thermodynamic-metrics">Kinematic and Thermodynamic Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#cape-related-metrics">CAPE related metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#other-functions">Other functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery of Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/plotrack.html">1. Plotting the track of a Tropical Cyclone</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/plotrack.html#expected-plot-for-earl-2010">1.1. Expected plot for Earl, 2010:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_intensity_series.html">2. Plotting the intensity metrics of a Tropical Cyclone</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_intensity_series.html#expected-plot-for-ivan-in-2004">2.1. Expected plot for Ivan in 2004:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_drift_dropsondes.html">3. Plot the drift of all dropsondes for a TC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_drift_dropsondes.html#expected-plot-for-isabel-in-september-12-2003">3.1. Expected plot for Isabel in September 12, 2003 :</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_winds_temp.html">4. Plot the wind and temperature structure of a TC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_winds_temp.html#cross-sections">4.1. Cross sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_winds_temp.html#plan-views">4.2. Plan views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_winds_temp.html#expected-cross-sections-for-earl-on-september-2-2010">4.3. Expected cross sections for Earl on September 2, 2010 :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_winds_temp.html#expected-plan-views-for-earl-on-september-2-2010">4.4. Expected plan views for Earl on September 2, 2010 :</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_kinematic3D.html">5. Plot vorticity and divergence in 3D views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_kinematic3D.html#computation-of-vorticity-and-divergence">5.1. Computation of vorticity and divergence.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_kinematic3D.html#cross-section">5.2. Cross section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_kinematic3D.html#plan-views">5.3. Plan views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_kinematic3D.html#expected-cross-sections-for-earl-on-september-3th-2010">5.4. Expected cross sections for Earl on September 3th, 2010 :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_kinematic3D.html#expected-plan-views-for-earl-on-september-3th-2010">5.5. Expected plan views for Earl on September 3th, 2010  :</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_gradwindbalanc.html">6. Evaluate gradient wind balance and momentum!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_gradwindbalanc.html#gradient-wind-balance">6.1. Gradient wind balance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_gradwindbalanc.html#momentum">6.2. Momentum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_gradwindbalanc.html#expected-gradient-balance-for-earl-in-september-3-2010">6.3. Expected gradient balance for Earl in September 3, 2010:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_gradwindbalanc.html#expected-momentum-plots-for-earl-in-september-1-2010">6.4. Expected momentum plots for Earl in September 1, 2010:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_cape.html">6. Plot CAPE distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_cape.html#skewt-log-p-plots">6.1. SkewT-log P plots.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_cape.html#cape-distribution">6.2. CAPE Distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_cape.html#expected-skewts-for-rita-in-september-21-2005">6.3. Expected skewTs for Rita in September 21, 2005 :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/plot_cape.html#expected-cape-distribution-for-rita-in-september-21-2005">6.4. Expected CAPE distribution for Rita in September 21, 2005 :</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gallery.html#examples-for-dummies">Examples for Dummies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gallery.html#intermediate-examples">Intermediate examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="userguide.html" class="btn btn-neutral float-right" title="User guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Garcia-Franco J.L..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
